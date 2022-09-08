@@ -1,0 +1,548 @@
+modules/testing/unittests/test_1_1.py
+2022-09-08 08:34:22.828404: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:22.828446: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:24.751792: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:24.751832: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:24.751850: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 1.055s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13700
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.1558537483215332 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.16105031967163086 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.15640592575073242 secs. ---
+--- store_id features generated in 0.16266441345214844 secs. ---
+modules/testing/unittests/test_1_2.py
+2022-09-08 08:34:26.512830: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:26.512872: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:28.446098: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:28.446137: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:28.446156: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+E
+======================================================================
+ERROR: test_add_features_and_stacking (modules.testing.unittests.test_1_2.concrete_test_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py", line 179, in test_add_features_and_stacking
+    df.drop(p.time_features, axis=1, inplace=True)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/frame.py", line 4913, in drop
+    errors=errors,
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/generic.py", line 4150, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/generic.py", line 4185, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 6017, in drop
+    raise KeyError(f"{labels[mask]} not found in axis")
+KeyError: "['weekend' 'day_part'] not found in axis"
+
+----------------------------------------------------------------------
+Ran 1 test in 0.027s
+
+FAILED (errors=1)
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13730
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+modules/testing/unittests/test_1_3.py
+2022-09-08 08:34:29.193964: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:29.194007: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:31.119665: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:31.119712: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:31.119733: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+E
+======================================================================
+ERROR: test_add_features_and_stacking (modules.testing.unittests.test_1_3.concrete_test_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py", line 179, in test_add_features_and_stacking
+    df.drop(p.time_features, axis=1, inplace=True)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/frame.py", line 4913, in drop
+    errors=errors,
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/generic.py", line 4150, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/generic.py", line 4185, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 6017, in drop
+    raise KeyError(f"{labels[mask]} not found in axis")
+KeyError: "['weekend' 'day_part'] not found in axis"
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (errors=1)
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13772
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+modules/testing/unittests/test_2_1.py
+2022-09-08 08:34:31.828273: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:31.828325: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:33.755862: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:33.755921: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:33.755942: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.539s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13790
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.07449507713317871 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.08261585235595703 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.07560920715332031 secs. ---
+--- store_id features generated in 0.08546566963195801 secs. ---
+modules/testing/unittests/test_2_2.py
+2022-09-08 08:34:34.999513: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:34.999555: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:36.919274: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:36.919318: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:36.919337: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.197s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13820
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.07503509521484375 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.08142971992492676 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 1
+--- Stacking for market_id done in 0.011460304260253906 secs with final number of features: 25 ---
+modules/testing/unittests/test_2_3.py
+2022-09-08 08:34:37.804709: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:37.804749: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:39.750518: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:39.750563: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:39.750583: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.207s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13838
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.07362127304077148 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.08499455451965332 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 1
+--- Stacking for market_id done in 0.01926708221435547 secs with final number of features: 26 ---
+modules/testing/unittests/test_2_4.py
+2022-09-08 08:34:40.662187: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:40.662228: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:42.586782: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:42.586823: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:42.586852: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.212s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13856
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.07782149314880371 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.08344817161560059 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 2
+--- Stacking for market_id done in 0.020333290100097656 secs with final number of features: 26 ---
+modules/testing/unittests/test_3_1.py
+2022-09-08 08:34:43.492993: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:43.493039: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:45.404064: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:45.404112: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:45.404132: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 1.037s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13874
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.14070606231689453 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.18954038619995117 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.13884472846984863 secs. ---
+--- store_id features generated in 0.18911337852478027 secs. ---
+modules/testing/unittests/test_3_2.py
+2022-09-08 08:34:47.153051: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:47.153098: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:49.069914: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:49.069962: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:49.069984: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.388s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13892
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.14359021186828613 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.19613313674926758 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 1
+--- Stacking for market_id done in 0.017811059951782227 secs with final number of features: 25 ---
+modules/testing/unittests/test_3_3.py
+2022-09-08 08:34:50.171313: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:50.171355: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:52.113948: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:52.114000: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:52.114021: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.408s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13910
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.14246153831481934 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.19007182121276855 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 1
+--- Stacking for market_id done in 0.04523491859436035 secs with final number of features: 26 ---
+modules/testing/unittests/test_3_4.py
+2022-09-08 08:34:53.223201: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:53.223245: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:55.140752: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:55.140797: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:55.140816: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.394s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13928
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.14371299743652344 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.1908855438232422 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 2
+--- Stacking for market_id done in 0.029278278350830078 secs with final number of features: 26 ---
+modules/testing/unittests/test_4_1.py
+2022-09-08 08:34:56.250553: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:56.250596: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:34:58.163411: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:34:58.163459: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:34:58.163480: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.915s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13946
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.13825631141662598 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.14082765579223633 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.13831114768981934 secs. ---
+--- store_id features generated in 0.1460566520690918 secs. ---
+modules/testing/unittests/test_4_2.py
+2022-09-08 08:34:59.768401: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:34:59.768444: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:35:01.668844: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:35:01.668903: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:35:01.668924: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+/home/alirachidi/doordash/prediction/modules/main/stacking.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  X = np.array(X)
+/home/alirachidi/doordash/prediction/modules/main/stacking.py:158: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  y = np.array(y)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.339s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13964
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.14186429977416992 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.14749908447265625 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 1
+--- Stacking for market_id done in 0.01908564567565918 secs with final number of features: 25 ---
+modules/testing/unittests/test_4_3.py
+2022-09-08 08:35:02.715343: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:35:02.715385: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:35:04.641722: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:35:04.641769: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:35:04.641790: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+/home/alirachidi/doordash/prediction/modules/main/stacking.py:157: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  X = np.array(X)
+/home/alirachidi/doordash/prediction/modules/main/stacking.py:158: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  y = np.array(y)
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.346s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 13983
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.14145159721374512 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_market_id_features_v1.csv...
+--- store_id features generated in 0.1455674171447754 secs. ---
+--- Writing /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unnitest_store_id_features_v1.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+Task: 1
+--- Stacking for market_id done in 0.028806447982788086 secs with final number of features: 26 ---
+modules/testing/unittests/test_5_1.py
+2022-09-08 08:35:05.708949: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:35:05.708994: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:35:07.649553: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:35:07.649596: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:35:07.649617: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.164s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 14002
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.01842522621154785 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.015585899353027344 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.018220186233520508 secs. ---
+--- store_id features generated in 0.015584945678710938 secs. ---
+modules/testing/unittests/test_6_1.py
+2022-09-08 08:35:08.522489: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:35:08.522531: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:35:10.441626: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:35:10.441674: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:35:10.441695: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.231s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 14021
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.029510974884033203 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.024915218353271484 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.02864980697631836 secs. ---
+--- store_id features generated in 0.02458047866821289 secs. ---
+modules/testing/unittests/test_7_1.py
+2022-09-08 08:35:11.375354: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:35:11.375398: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:35:13.293192: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:35:13.293236: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:35:13.293256: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.302s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 14039
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.04192399978637695 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.03430914878845215 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.041266679763793945 secs. ---
+--- store_id features generated in 0.03475046157836914 secs. ---
+modules/testing/unittests/test_8_1.py
+2022-09-08 08:35:14.289427: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-08 08:35:14.289470: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-09-08 08:35:16.225138: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-08 08:35:16.225189: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-08 08:35:16.225210: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+/home/alirachidi/doordash/prediction/modules/testing/testing_methods.py:7: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  from pandas.util.testing import assert_frame_equal
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.538s
+
+OK
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+Num GPUs Available:  0
+PID: 14057
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/unit_tests
+--- All variables have been collected. --
+--- market_id features generated in 0.0824589729309082 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_market_id_features_v1.csv...
+--- store_id features generated in 0.07049965858459473 secs. ---
+--- Writing /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- Reading /home/alirachidi/doordash/data/unittest_data/unittest_store_id_features_v1.csv...
+--- market_id features generated in 0.0813591480255127 secs. ---
+--- store_id features generated in 0.0693352222442627 secs. ---

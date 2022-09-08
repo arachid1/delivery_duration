@@ -1,0 +1,79 @@
+2022-08-24 04:10:02.897045: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-24 04:10:02.897179: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-24 04:10:06.341580: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-24 04:10:06.341616: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-24 04:10:06.341634: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 31329
+Description: linear regrssion
+File dir is ../../doordash/prediction/cache/train_55
+--- All variables have been collected. --
+(179555, 19)
+/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/util/_decorators.py:311: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  return func(*args, **kwargs)
+Stacking done in 234.7655520439148 secs
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_55/0
+2022-08-24 04:14:02.340452: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+table
+19
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', 'count_by_market_id', 'count_by_store_id', 'avg_subtotal_by_market_id', 'avg_subtotal_by_store_id', 'avg_time_by_market_id', 'avg_time_by_store_id']
+[[ -23.277914     -0.00542536    0.09505944  -17.886002    -15.455926
+    18.34283       1.180225     -4.152658    -15.337687     -3.6977725
+   -58.15513      30.656637   -149.92732       1.4976602    15.081552
+     0.23140922   -0.00212649    0.41591224    0.03726713]]
+mae
+642.33356
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_55/1
+table
+19
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', 'count_by_market_id', 'count_by_store_id', 'avg_subtotal_by_market_id', 'avg_subtotal_by_store_id', 'avg_time_by_market_id', 'avg_time_by_store_id']
+[[  -4.9633007    -0.00465164    0.09714866  -19.980305     -8.881373
+    16.28952       1.1628035   -11.474023     30.654629     -4.1355243
+  -105.526794     26.172964   -126.150116      1.5982423    12.980163
+     0.23141493   -0.00069573    0.419459      0.03833634]]
+mae
+679.0391
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_55/2
+table
+19
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', 'count_by_market_id', 'count_by_store_id', 'avg_subtotal_by_market_id', 'avg_subtotal_by_store_id', 'avg_time_by_market_id', 'avg_time_by_store_id']
+[[ -3.8516364   -0.00496325   0.09816134 -20.565783    -6.1500673
+   15.17074      1.1644633    0.9407295   -7.49269      1.1424532
+    2.246225    15.2173     -70.91501      1.4425559   16.829638
+    0.21664311  -0.0020602    0.3867749    0.03992505]]
+mae
+748.29706
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_55/3
+table
+19
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', 'count_by_market_id', 'count_by_store_id', 'avg_subtotal_by_market_id', 'avg_subtotal_by_store_id', 'avg_time_by_market_id', 'avg_time_by_store_id']
+[[  -3.3200736    -0.00548875    0.09656576  -21.485205     -7.797304
+    16.283241      1.1811235   -22.49595      59.173325     -5.027575
+   -74.165115     21.436424   -105.97969       1.6732846    15.811518
+     0.24267213   -0.00210982    0.35526037    0.03533257]]
+mae
+643.9179
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_55/4
+table
+19
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', 'count_by_market_id', 'count_by_store_id', 'avg_subtotal_by_market_id', 'avg_subtotal_by_store_id', 'avg_time_by_market_id', 'avg_time_by_store_id']
+[[   0.92185265   -0.00327307    0.09783804  -20.537857     -8.284634
+    16.397964      1.1986616   -13.403034      4.680049     -7.6015
+  -166.05696       7.1285763   -43.944504      1.6991264    -5.603745
+     0.20673157    0.00616985    0.40840918    0.03752461]]
+mae
+702.2775
+-------
+Kfold metrics
+683.1730346679688

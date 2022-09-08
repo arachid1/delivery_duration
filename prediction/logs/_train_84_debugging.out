@@ -1,0 +1,26 @@
+2022-09-01 12:57:25.272037: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-09-01 12:57:25.272115: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-09-01 12:57:28.885477: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-09-01 12:57:28.885526: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-09-01 12:57:28.885547: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 26117
+Description: debugging
+File dir is /home/alirachidi/doordash/prediction/cache/train_84_debugging
+--- All variables have been collected. --
+Traceback (most recent call last):
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/alirachidi/doordash/prediction/jobs/train_84.py", line 134, in <module>
+    train_model(RNN8)
+  File "/home/alirachidi/doordash/prediction/jobs/train_84.py", line 39, in train_model
+    historical_data = add_features(historical_data)
+  File "/home/alirachidi/doordash/prediction/modules/main/feature_engineering.py", line 25, in add_features
+    df = add_domain_features(df, label)
+  File "/home/alirachidi/doordash/prediction/modules/main/feature_engineering.py", line 82, in add_domain_features
+    if p.testing:
+AttributeError: module 'modules.main.parameters' has no attribute 'testing'

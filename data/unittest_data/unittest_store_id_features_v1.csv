@@ -1,0 +1,7 @@
+1_hr_count_by_store_id,1_hr_avg_subtotal_by_store_id,long_score_by_store_id,short_score_by_store_id,trip_to_customer_by_store_id
+0,0.0,0.0,1.0,0
+1,1200.0,0.0,1.0,0
+0,0.0,0.0,0.0,0
+1,1000.0,0.0,0.0,0
+0,0.0,0.0,0.0,0
+1,500.0,0.0,0.0,0
