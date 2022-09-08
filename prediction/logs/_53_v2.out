@@ -1,0 +1,1963 @@
+2022-08-26 05:10:11.800844: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-26 05:10:11.800896: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-26 05:10:14.273189: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-26 05:10:14.273221: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-26 05:10:14.273241: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 7929
+Description: test
+File dir is /home/alirachidi/doordash/prediction/cache/train_53
+--- All variables have been collected. --
+here
+/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/util/_decorators.py:311: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  return func(*args, **kwargs)
+Feature generated in 952.4107775688171 secs
+Feature generated in 1937.784731388092 secs
+Index(['market_id', 'created_at', 'actual_delivery_time', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'delivery_duration_sec', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_store_id', '1_hr_count_by_market_id', '1_hr_avg_subtotal_by_market_id', '24_hr_avg_time_by_market_id'], dtype='object')
+22
+Stacking done in 685.2649872303009 secs
+-------------------------------
+New job directory is /home/alirachidi/doordash/prediction/cache/train_53/0
+2022-08-26 06:09:52.257090: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+--- training dataset contains 143646 elements ---
+--- validation dataset contains 35909 elements ---
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 5, 19, 32)         320       
+                                                                 
+ conv2d_1 (Conv2D)           (None, 5, 19, 64)         18496     
+                                                                 
+ batch_normalization (BatchN  (None, 5, 19, 64)        256       
+ ormalization)                                                   
+                                                                 
+ dropout (Dropout)           (None, 5, 19, 64)         0         
+                                                                 
+ reshape (Reshape)           (None, 5, 1216)           0         
+                                                                 
+ bidirectional (Bidirectiona  (None, 5, 64)            319744    
+ l)                                                              
+                                                                 
+ dropout_1 (Dropout)         (None, 5, 64)             0         
+                                                                 
+ dense (Dense)               (None, 5, 100)            6500      
+                                                                 
+ dropout_2 (Dropout)         (None, 5, 100)            0         
+                                                                 
+ flatten (Flatten)           (None, 500)               0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 501       
+                                                                 
+=================================================================
+Total params: 345,817
+Trainable params: 345,689
+Non-trainable params: 128
+_________________________________________________________________
+
+Epoch 1/200
+train loss: 5135857.0
+train mean_absolute_error: 1856.60791015625
+train lateness: 0.7721583247184753
+train earliness: 0.040243037045001984
+validation loss: 962253.875
+validation mean_absolute_error: 746.2914428710938
+validation lateness: 0.23791447281837463
+validation earliness: 0.2761461138725281
+Time taken for epoch: 91.67s
+
+Epoch 2/200
+train loss: 1231226.375
+train mean_absolute_error: 829.348388671875
+train lateness: 0.2396135777235031
+train earliness: 0.31244778633117676
+validation loss: 978091.625
+validation mean_absolute_error: 775.4059448242188
+validation lateness: 0.19465628266334534
+validation earliness: 0.3532879650592804
+Time taken for epoch: 88.71s
+The validation tracker metric at 746.2914428710938 hasn't increased  in 1 epochs
+
+Epoch 3/200
+train loss: 1091393.0
+train mean_absolute_error: 767.2940673828125
+train lateness: 0.2317870855331421
+train earliness: 0.2778317928314209
+validation loss: 829453.9375
+validation mean_absolute_error: 658.4909057617188
+validation lateness: 0.26386961340904236
+validation earliness: 0.1615619957447052
+Time taken for epoch: 90.36s
+
+Epoch 4/200
+train loss: 961797.125
+train mean_absolute_error: 718.9622192382812
+train lateness: 0.21243689954280853
+train earliness: 0.2672211229801178
+validation loss: 952317.0625
+validation mean_absolute_error: 688.2145385742188
+validation lateness: 0.35048168897628784
+validation earliness: 0.07046878337860107
+Time taken for epoch: 90.41s
+The validation tracker metric at 658.4909057617188 hasn't increased  in 1 epochs
+
+Epoch 5/200
+train loss: 898473.9375
+train mean_absolute_error: 693.5458984375
+train lateness: 0.2060408592224121
+train earliness: 0.2549232542514801
+validation loss: 781660.625
+validation mean_absolute_error: 628.10205078125
+validation lateness: 0.2738509476184845
+validation earliness: 0.1199527233839035
+Time taken for epoch: 91.29s
+
+Epoch 6/200
+train loss: 873539.1875
+train mean_absolute_error: 684.7464599609375
+train lateness: 0.20376922190189362
+train earliness: 0.25175338983535767
+validation loss: 709580.6875
+validation mean_absolute_error: 638.4463500976562
+validation lateness: 0.17290838062763214
+validation earliness: 0.2692892551422119
+Time taken for epoch: 90.15s
+The validation tracker metric at 628.10205078125 hasn't increased  in 1 epochs
+
+Epoch 7/200
+train loss: 858517.125
+train mean_absolute_error: 679.0663452148438
+train lateness: 0.20254692435264587
+train earliness: 0.24967044591903687
+validation loss: 711345.875
+validation mean_absolute_error: 639.861572265625
+validation lateness: 0.1701459288597107
+validation earliness: 0.2702636122703552
+Time taken for epoch: 91.63s
+The validation tracker metric at 628.10205078125 hasn't increased  in 2 epochs
+
+Epoch 8/200
+train loss: 852870.75
+train mean_absolute_error: 677.427001953125
+train lateness: 0.20169895887374878
+train earliness: 0.2504093647003174
+validation loss: 702469.375
+validation mean_absolute_error: 620.3574829101562
+validation lateness: 0.20262067019939423
+validation earliness: 0.21282963454723358
+Time taken for epoch: 91.67s
+
+Epoch 9/200
+train loss: 840802.3125
+train mean_absolute_error: 672.6600952148438
+train lateness: 0.20063483715057373
+train earliness: 0.24732284247875214
+validation loss: 707914.5625
+validation mean_absolute_error: 613.9207153320312
+validation lateness: 0.2215263992547989
+validation earliness: 0.18112792074680328
+Time taken for epoch: 89.83s
+
+Epoch 10/200
+train loss: 838624.5
+train mean_absolute_error: 671.5078735351562
+train lateness: 0.20082542300224304
+train earliness: 0.24591265618801117
+validation loss: 723564.5
+validation mean_absolute_error: 621.7613525390625
+validation lateness: 0.22329573333263397
+validation earliness: 0.1846490502357483
+Time taken for epoch: 91.40s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 1 epochs
+
+Epoch 11/200
+train loss: 836483.75
+train mean_absolute_error: 672.0026245117188
+train lateness: 0.2005118578672409
+train earliness: 0.24721869826316833
+validation loss: 715523.1875
+validation mean_absolute_error: 615.2422485351562
+validation lateness: 0.2288987636566162
+validation earliness: 0.17152735590934753
+Time taken for epoch: 90.66s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 2 epochs
+
+Epoch 12/200
+train loss: 833824.9375
+train mean_absolute_error: 669.8727416992188
+train lateness: 0.1998833864927292
+train earliness: 0.24476838111877441
+validation loss: 770094.125
+validation mean_absolute_error: 623.6367797851562
+validation lateness: 0.27852022647857666
+validation earliness: 0.11156255006790161
+Time taken for epoch: 89.76s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 3 epochs
+
+Epoch 13/200
+train loss: 828763.5
+train mean_absolute_error: 667.5498657226562
+train lateness: 0.19975312054157257
+train earliness: 0.24462531507015228
+validation loss: 706231.0
+validation mean_absolute_error: 632.6734008789062
+validation lateness: 0.17975367605686188
+validation earliness: 0.2514156997203827
+Time taken for epoch: 89.40s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.000750000006519258
+
+Epoch 14/200
+train loss: 824640.4375
+train mean_absolute_error: 665.9983520507812
+train lateness: 0.1981995403766632
+train earliness: 0.24341659247875214
+validation loss: 707330.3125
+validation mean_absolute_error: 614.631591796875
+validation lateness: 0.22072145342826843
+validation earliness: 0.18124952912330627
+Time taken for epoch: 89.38s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 5 epochs
+
+Epoch 15/200
+train loss: 822460.125
+train mean_absolute_error: 664.9368286132812
+train lateness: 0.19928820431232452
+train earliness: 0.24314630031585693
+validation loss: 701910.875
+validation mean_absolute_error: 625.4666137695312
+validation lateness: 0.18546395003795624
+validation earliness: 0.23686355352401733
+Time taken for epoch: 91.26s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 6 epochs
+
+Epoch 16/200
+train loss: 821296.5625
+train mean_absolute_error: 664.1865234375
+train lateness: 0.1978069394826889
+train earliness: 0.242120623588562
+validation loss: 700277.375
+validation mean_absolute_error: 626.9718627929688
+validation lateness: 0.18390750885009766
+validation earliness: 0.24063663184642792
+Time taken for epoch: 90.91s
+The validation tracker metric at 613.9207153320312 hasn't increased  in 7 epochs
+
+Epoch 17/200
+train loss: 817928.0625
+train mean_absolute_error: 662.7581176757812
+train lateness: 0.19743049144744873
+train earliness: 0.24116846919059753
+validation loss: 697208.1875
+validation mean_absolute_error: 616.8151245117188
+validation lateness: 0.20047937333583832
+validation earliness: 0.20985428988933563
+Time taken for epoch: 90.36s
+Training stopped due to unimproved results over 8 epochs
+--- Best performance found at epoch 8 --
+Best value of tracked metric: 613.9207153320312
+Best mean_absolute_error: 613.9207153320312
+Best lateness: 0.2215263992547989
+Best earliness: 0.18112792074680328
+-------------------------------
+New job directory is /home/alirachidi/doordash/prediction/cache/train_53/1
+--- training dataset contains 143646 elements ---
+--- validation dataset contains 35909 elements ---
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_2 (Conv2D)           (None, 5, 19, 32)         320       
+                                                                 
+ conv2d_3 (Conv2D)           (None, 5, 19, 64)         18496     
+                                                                 
+ batch_normalization_1 (Batc  (None, 5, 19, 64)        256       
+ hNormalization)                                                 
+                                                                 
+ dropout_3 (Dropout)         (None, 5, 19, 64)         0         
+                                                                 
+ reshape_1 (Reshape)         (None, 5, 1216)           0         
+                                                                 
+ bidirectional_1 (Bidirectio  (None, 5, 64)            319744    
+ nal)                                                            
+                                                                 
+ dropout_4 (Dropout)         (None, 5, 64)             0         
+                                                                 
+ dense_2 (Dense)             (None, 5, 100)            6500      
+                                                                 
+ dropout_5 (Dropout)         (None, 5, 100)            0         
+                                                                 
+ flatten_1 (Flatten)         (None, 500)               0         
+                                                                 
+ dense_3 (Dense)             (None, 1)                 501       
+                                                                 
+=================================================================
+Total params: 345,817
+Trainable params: 345,689
+Non-trainable params: 128
+_________________________________________________________________
+
+Epoch 1/200
+train loss: 5067472.0
+train mean_absolute_error: 1846.0572509765625
+train lateness: 0.7698850035667419
+train earliness: 0.039829254150390625
+validation loss: 1150610.25
+validation mean_absolute_error: 789.7565307617188
+validation lateness: 0.25493961572647095
+validation earliness: 0.2622338533401489
+Time taken for epoch: 89.51s
+
+Epoch 2/200
+train loss: 1187571.875
+train mean_absolute_error: 817.5575561523438
+train lateness: 0.23736697435379028
+train earliness: 0.30954980850219727
+validation loss: 1139983.375
+validation mean_absolute_error: 806.6469116210938
+validation lateness: 0.22213038802146912
+validation earliness: 0.32331493496894836
+Time taken for epoch: 90.67s
+The validation tracker metric at 789.7565307617188 hasn't increased  in 1 epochs
+
+Epoch 3/200
+train loss: 1080302.125
+train mean_absolute_error: 768.1458129882812
+train lateness: 0.23356878757476807
+train earliness: 0.2800573706626892
+validation loss: 1000638.0625
+validation mean_absolute_error: 705.8967895507812
+validation lateness: 0.25967392325401306
+validation earliness: 0.18611419200897217
+Time taken for epoch: 90.35s
+
+Epoch 4/200
+train loss: 958637.1875
+train mean_absolute_error: 722.0257568359375
+train lateness: 0.2145243138074875
+train earliness: 0.272218257188797
+validation loss: 1083538.25
+validation mean_absolute_error: 722.0459594726562
+validation lateness: 0.31275275349617004
+validation earliness: 0.1237880140542984
+Time taken for epoch: 88.84s
+The validation tracker metric at 705.8967895507812 hasn't increased  in 1 epochs
+
+Epoch 5/200
+train loss: 877557.6875
+train mean_absolute_error: 688.9254150390625
+train lateness: 0.20655307173728943
+train earliness: 0.2548401653766632
+validation loss: 923065.0
+validation mean_absolute_error: 667.8502807617188
+validation lateness: 0.25782644748687744
+validation earliness: 0.15505395829677582
+Time taken for epoch: 89.33s
+
+Epoch 6/200
+train loss: 842390.25
+train mean_absolute_error: 674.9577026367188
+train lateness: 0.2029760777950287
+train earliness: 0.24872978031635284
+validation loss: 841721.4375
+validation mean_absolute_error: 655.1527099609375
+validation lateness: 0.20928218960762024
+validation earliness: 0.2160322219133377
+Time taken for epoch: 90.51s
+
+Epoch 7/200
+train loss: 832429.9375
+train mean_absolute_error: 671.5250244140625
+train lateness: 0.20143954455852509
+train earliness: 0.24796642363071442
+validation loss: 833342.5
+validation mean_absolute_error: 658.7658081054688
+validation lateness: 0.19581164419651031
+validation earliness: 0.23219142854213715
+Time taken for epoch: 89.63s
+The validation tracker metric at 655.1527099609375 hasn't increased  in 1 epochs
+
+Epoch 8/200
+train loss: 824838.0
+train mean_absolute_error: 668.6187744140625
+train lateness: 0.20111621916294098
+train earliness: 0.24528083205223083
+validation loss: 822344.25
+validation mean_absolute_error: 660.4002075195312
+validation lateness: 0.1831735372543335
+validation earliness: 0.2535223066806793
+Time taken for epoch: 90.29s
+The validation tracker metric at 655.1527099609375 hasn't increased  in 2 epochs
+
+Epoch 9/200
+train loss: 819932.9375
+train mean_absolute_error: 666.3194580078125
+train lateness: 0.19995367527008057
+train earliness: 0.24491176009178162
+validation loss: 835114.4375
+validation mean_absolute_error: 647.552001953125
+validation lateness: 0.22445549070835114
+validation earliness: 0.18493570387363434
+Time taken for epoch: 89.33s
+
+Epoch 10/200
+train loss: 813489.625
+train mean_absolute_error: 663.8247680664062
+train lateness: 0.19845008850097656
+train earliness: 0.24404147267341614
+validation loss: 833487.25
+validation mean_absolute_error: 654.8055419921875
+validation lateness: 0.2054193913936615
+validation earliness: 0.21794626116752625
+Time taken for epoch: 89.37s
+The validation tracker metric at 647.552001953125 hasn't increased  in 1 epochs
+
+Epoch 11/200
+train loss: 811807.6875
+train mean_absolute_error: 663.6638793945312
+train lateness: 0.19965873658657074
+train earliness: 0.24446485936641693
+validation loss: 869630.8125
+validation mean_absolute_error: 709.060302734375
+validation lateness: 0.14397069811820984
+validation earliness: 0.3447949290275574
+Time taken for epoch: 91.16s
+The validation tracker metric at 647.552001953125 hasn't increased  in 2 epochs
+
+Epoch 12/200
+train loss: 810569.6875
+train mean_absolute_error: 662.763916015625
+train lateness: 0.1994941532611847
+train earliness: 0.24237622320652008
+validation loss: 817393.3125
+validation mean_absolute_error: 643.6253051757812
+validation lateness: 0.21324783563613892
+validation earliness: 0.197601318359375
+Time taken for epoch: 91.14s
+
+Epoch 13/200
+train loss: 807773.9375
+train mean_absolute_error: 661.5814819335938
+train lateness: 0.19908620417118073
+train earliness: 0.24231255054473877
+validation loss: 814026.5
+validation mean_absolute_error: 651.9342041015625
+validation lateness: 0.1924077272415161
+validation earliness: 0.23154717683792114
+Time taken for epoch: 89.91s
+The validation tracker metric at 643.6253051757812 hasn't increased  in 1 epochs
+
+Epoch 14/200
+train loss: 806847.25
+train mean_absolute_error: 660.9015502929688
+train lateness: 0.19882354140281677
+train earliness: 0.24242745339870453
+validation loss: 840257.4375
+validation mean_absolute_error: 643.7421875
+validation lateness: 0.22798816859722137
+validation earliness: 0.17302438616752625
+Time taken for epoch: 91.68s
+The validation tracker metric at 643.6253051757812 hasn't increased  in 2 epochs
+
+Epoch 15/200
+train loss: 803013.25
+train mean_absolute_error: 660.492919921875
+train lateness: 0.19906063377857208
+train earliness: 0.24229900538921356
+validation loss: 826407.875
+validation mean_absolute_error: 645.0023193359375
+validation lateness: 0.21696870028972626
+validation earliness: 0.19454064965248108
+Time taken for epoch: 90.64s
+The validation tracker metric at 643.6253051757812 hasn't increased  in 3 epochs
+
+Epoch 16/200
+train loss: 797582.75
+train mean_absolute_error: 657.10107421875
+train lateness: 0.19764673709869385
+train earliness: 0.24040450155735016
+validation loss: 804426.0
+validation mean_absolute_error: 657.3030395507812
+validation lateness: 0.178292915225029
+validation earliness: 0.25782525539398193
+Time taken for epoch: 91.58s
+The validation tracker metric at 643.6253051757812 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.000750000006519258
+
+Epoch 17/200
+train loss: 792281.625
+train mean_absolute_error: 655.6800537109375
+train lateness: 0.1979730874300003
+train earliness: 0.23925025761127472
+validation loss: 800978.625
+validation mean_absolute_error: 643.1940307617188
+validation lateness: 0.19999298453330994
+validation earliness: 0.21677495539188385
+Time taken for epoch: 89.45s
+
+Epoch 18/200
+train loss: 790506.0
+train mean_absolute_error: 654.6875610351562
+train lateness: 0.19694876670837402
+train earliness: 0.2394409477710724
+validation loss: 804730.5625
+validation mean_absolute_error: 648.0977172851562
+validation lateness: 0.19211390614509583
+validation earliness: 0.22931456565856934
+Time taken for epoch: 88.81s
+The validation tracker metric at 643.1940307617188 hasn't increased  in 1 epochs
+
+Epoch 19/200
+train loss: 788390.9375
+train mean_absolute_error: 653.3841552734375
+train lateness: 0.1968408077955246
+train earliness: 0.23823659121990204
+validation loss: 805404.0
+validation mean_absolute_error: 663.3204956054688
+validation lateness: 0.16941197216510773
+validation earliness: 0.27496761083602905
+Time taken for epoch: 89.75s
+The validation tracker metric at 643.1940307617188 hasn't increased  in 2 epochs
+
+Epoch 20/200
+train loss: 788118.3125
+train mean_absolute_error: 654.5032348632812
+train lateness: 0.1967017948627472
+train earliness: 0.23875641822814941
+validation loss: 817380.0625
+validation mean_absolute_error: 641.091064453125
+validation lateness: 0.21347229182720184
+validation earliness: 0.19237464666366577
+Time taken for epoch: 89.50s
+
+Epoch 21/200
+train loss: 786510.8125
+train mean_absolute_error: 653.1968994140625
+train lateness: 0.19733867049217224
+train earliness: 0.23755395412445068
+validation loss: 806515.375
+validation mean_absolute_error: 638.7631225585938
+validation lateness: 0.21099650859832764
+validation earliness: 0.19659504294395447
+Time taken for epoch: 88.32s
+
+Epoch 22/200
+train loss: 784058.375
+train mean_absolute_error: 651.7105712890625
+train lateness: 0.19656974077224731
+train earliness: 0.2372463345527649
+validation loss: 811462.0
+validation mean_absolute_error: 675.4221801757812
+validation lateness: 0.1582709103822708
+validation earliness: 0.3057802617549896
+Time taken for epoch: 89.66s
+The validation tracker metric at 638.7631225585938 hasn't increased  in 1 epochs
+
+Epoch 23/200
+train loss: 781607.1875
+train mean_absolute_error: 651.2130126953125
+train lateness: 0.19558723270893097
+train earliness: 0.23648054897785187
+validation loss: 795691.4375
+validation mean_absolute_error: 642.1192626953125
+validation lateness: 0.19433055818080902
+validation earliness: 0.22185969352722168
+Time taken for epoch: 89.79s
+The validation tracker metric at 638.7631225585938 hasn't increased  in 2 epochs
+
+Epoch 24/200
+train loss: 780181.625
+train mean_absolute_error: 649.9102783203125
+train lateness: 0.19658330082893372
+train earliness: 0.23459109663963318
+validation loss: 801649.75
+validation mean_absolute_error: 642.558349609375
+validation lateness: 0.199387788772583
+validation earliness: 0.21441636979579926
+Time taken for epoch: 88.91s
+The validation tracker metric at 638.7631225585938 hasn't increased  in 3 epochs
+
+Epoch 25/200
+train loss: 779224.1875
+train mean_absolute_error: 649.6170654296875
+train lateness: 0.19718147814273834
+train earliness: 0.23353752493858337
+validation loss: 804639.9375
+validation mean_absolute_error: 661.5943603515625
+validation lateness: 0.17189931869506836
+validation earliness: 0.2746606469154358
+Time taken for epoch: 91.63s
+The validation tracker metric at 638.7631225585938 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.0005624999757856131
+
+Epoch 26/200
+train loss: 774180.25
+train mean_absolute_error: 647.72998046875
+train lateness: 0.19529227912425995
+train earliness: 0.23425094783306122
+validation loss: 809071.5625
+validation mean_absolute_error: 666.4996337890625
+validation lateness: 0.16637004911899567
+validation earliness: 0.2837182283401489
+Time taken for epoch: 89.38s
+The validation tracker metric at 638.7631225585938 hasn't increased  in 5 epochs
+
+Epoch 27/200
+train loss: 773408.9375
+train mean_absolute_error: 647.7579345703125
+train lateness: 0.19578543305397034
+train earliness: 0.23497864603996277
+validation loss: 820339.9375
+validation mean_absolute_error: 679.2075805664062
+validation lateness: 0.15686355531215668
+validation earliness: 0.31022515892982483
+Time taken for epoch: 89.55s
+The validation tracker metric at 638.7631225585938 hasn't increased  in 6 epochs
+
+Epoch 28/200
+train loss: 772933.9375
+train mean_absolute_error: 647.1431274414062
+train lateness: 0.19568230211734772
+train earliness: 0.23386284708976746
+validation loss: 804427.8125
+validation mean_absolute_error: 638.12158203125
+validation lateness: 0.209279403090477
+validation earliness: 0.19591888785362244
+Time taken for epoch: 90.12s
+
+Epoch 29/200
+train loss: 771101.75
+train mean_absolute_error: 646.519775390625
+train lateness: 0.19456100463867188
+train earliness: 0.23380757868289948
+validation loss: 797402.125
+validation mean_absolute_error: 640.9351196289062
+validation lateness: 0.2007516622543335
+validation earliness: 0.2115873396396637
+Time taken for epoch: 90.05s
+The validation tracker metric at 638.12158203125 hasn't increased  in 1 epochs
+
+Epoch 30/200
+train loss: 769384.625
+train mean_absolute_error: 645.582275390625
+train lateness: 0.19545944035053253
+train earliness: 0.2332632839679718
+validation loss: 801512.5
+validation mean_absolute_error: 649.5137329101562
+validation lateness: 0.18672655522823334
+validation earliness: 0.23762941360473633
+Time taken for epoch: 89.60s
+The validation tracker metric at 638.12158203125 hasn't increased  in 2 epochs
+
+Epoch 31/200
+train loss: 768034.5625
+train mean_absolute_error: 645.0958862304688
+train lateness: 0.19598262012004852
+train earliness: 0.23332396149635315
+validation loss: 794523.6875
+validation mean_absolute_error: 644.3452758789062
+validation lateness: 0.19205889105796814
+validation earliness: 0.22943617403507233
+Time taken for epoch: 90.39s
+The validation tracker metric at 638.12158203125 hasn't increased  in 3 epochs
+
+Epoch 32/200
+train loss: 766089.5
+train mean_absolute_error: 644.2731323242188
+train lateness: 0.19483207166194916
+train earliness: 0.23283515870571136
+validation loss: 795345.625
+validation mean_absolute_error: 646.4320678710938
+validation lateness: 0.18946149945259094
+validation earliness: 0.23444995284080505
+Time taken for epoch: 89.78s
+The validation tracker metric at 638.12158203125 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.0004218749818392098
+
+Epoch 33/200
+train loss: 761460.8125
+train mean_absolute_error: 642.7109375
+train lateness: 0.19461661577224731
+train earliness: 0.23178863525390625
+validation loss: 793770.5
+validation mean_absolute_error: 647.3320922851562
+validation lateness: 0.186105415225029
+validation earliness: 0.23865161836147308
+Time taken for epoch: 90.91s
+The validation tracker metric at 638.12158203125 hasn't increased  in 5 epochs
+
+Epoch 34/200
+train loss: 760931.0
+train mean_absolute_error: 642.722900390625
+train lateness: 0.19401301443576813
+train earliness: 0.2323702573776245
+validation loss: 799928.6875
+validation mean_absolute_error: 640.1145629882812
+validation lateness: 0.20351849496364594
+validation earliness: 0.20687177777290344
+Time taken for epoch: 89.26s
+The validation tracker metric at 638.12158203125 hasn't increased  in 6 epochs
+
+Epoch 35/200
+train loss: 759762.375
+train mean_absolute_error: 642.5768432617188
+train lateness: 0.19455955922603607
+train earliness: 0.2324119657278061
+validation loss: 805054.4375
+validation mean_absolute_error: 660.3799438476562
+validation lateness: 0.17286212742328644
+validation earliness: 0.2689778804779053
+Time taken for epoch: 90.72s
+The validation tracker metric at 638.12158203125 hasn't increased  in 7 epochs
+
+Epoch 36/200
+train loss: 758627.0
+train mean_absolute_error: 640.921875
+train lateness: 0.19412894546985626
+train earliness: 0.23095054924488068
+validation loss: 800864.4375
+validation mean_absolute_error: 657.1378173828125
+validation lateness: 0.17443011701107025
+validation earliness: 0.2619791030883789
+Time taken for epoch: 90.98s
+Training stopped due to unimproved results over 8 epochs
+--- Best performance found at epoch 27 --
+Best value of tracked metric: 638.12158203125
+Best mean_absolute_error: 638.12158203125
+Best lateness: 0.209279403090477
+Best earliness: 0.19591888785362244
+-------------------------------
+New job directory is /home/alirachidi/doordash/prediction/cache/train_53/2
+--- training dataset contains 143646 elements ---
+--- validation dataset contains 35909 elements ---
+Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_4 (Conv2D)           (None, 5, 19, 32)         320       
+                                                                 
+ conv2d_5 (Conv2D)           (None, 5, 19, 64)         18496     
+                                                                 
+ batch_normalization_2 (Batc  (None, 5, 19, 64)        256       
+ hNormalization)                                                 
+                                                                 
+ dropout_6 (Dropout)         (None, 5, 19, 64)         0         
+                                                                 
+ reshape_2 (Reshape)         (None, 5, 1216)           0         
+                                                                 
+ bidirectional_2 (Bidirectio  (None, 5, 64)            319744    
+ nal)                                                            
+                                                                 
+ dropout_7 (Dropout)         (None, 5, 64)             0         
+                                                                 
+ dense_4 (Dense)             (None, 5, 100)            6500      
+                                                                 
+ dropout_8 (Dropout)         (None, 5, 100)            0         
+                                                                 
+ flatten_2 (Flatten)         (None, 500)               0         
+                                                                 
+ dense_5 (Dense)             (None, 1)                 501       
+                                                                 
+=================================================================
+Total params: 345,817
+Trainable params: 345,689
+Non-trainable params: 128
+_________________________________________________________________
+
+Epoch 1/200
+train loss: 4755344.0
+train mean_absolute_error: 1788.1026611328125
+train lateness: 0.7561933994293213
+train earliness: 0.044820237904787064
+validation loss: 1589350.625
+validation mean_absolute_error: 900.699951171875
+validation lateness: 0.31185096502304077
+validation earliness: 0.23787979781627655
+Time taken for epoch: 90.09s
+
+Epoch 2/200
+train loss: 1088083.875
+train mean_absolute_error: 786.8507690429688
+train lateness: 0.23387382924556732
+train earliness: 0.2989434003829956
+validation loss: 1543265.125
+validation mean_absolute_error: 902.2063598632812
+validation lateness: 0.2861505448818207
+validation earliness: 0.28010138869285583
+Time taken for epoch: 89.18s
+The validation tracker metric at 900.699951171875 hasn't increased  in 1 epochs
+
+Epoch 3/200
+train loss: 1006885.5625
+train mean_absolute_error: 747.6273803710938
+train lateness: 0.23015739023685455
+train earliness: 0.274858295917511
+validation loss: 1567664.5
+validation mean_absolute_error: 858.8573608398438
+validation lateness: 0.3627147376537323
+validation earliness: 0.12268328666687012
+Time taken for epoch: 88.53s
+
+Epoch 4/200
+train loss: 882483.875
+train mean_absolute_error: 693.7822875976562
+train lateness: 0.20954811573028564
+train earliness: 0.26005929708480835
+validation loss: 1244946.5
+validation mean_absolute_error: 809.7759399414062
+validation lateness: 0.24740222096443176
+validation earliness: 0.27578413486480713
+Time taken for epoch: 89.93s
+
+Epoch 5/200
+train loss: 861829.375
+train mean_absolute_error: 686.1612548828125
+train lateness: 0.20533345639705658
+train earliness: 0.25926512479782104
+validation loss: 1215861.625
+validation mean_absolute_error: 797.6717529296875
+validation lateness: 0.2461252361536026
+validation earliness: 0.2693079710006714
+Time taken for epoch: 88.97s
+
+Epoch 6/200
+train loss: 842323.375
+train mean_absolute_error: 677.8568725585938
+train lateness: 0.2035609483718872
+train earliness: 0.2546996772289276
+validation loss: 1202650.0
+validation mean_absolute_error: 787.775634765625
+validation lateness: 0.25169357657432556
+validation earliness: 0.24877923727035522
+Time taken for epoch: 90.17s
+
+Epoch 7/200
+train loss: 829469.9375
+train mean_absolute_error: 672.13232421875
+train lateness: 0.2012537717819214
+train earliness: 0.2521675229072571
+validation loss: 1195824.0
+validation mean_absolute_error: 783.2015380859375
+validation lateness: 0.25781646370887756
+validation earliness: 0.2374962568283081
+Time taken for epoch: 91.27s
+
+Epoch 8/200
+train loss: 806777.0625
+train mean_absolute_error: 661.5300903320312
+train lateness: 0.19939427077770233
+train earliness: 0.2453053742647171
+validation loss: 1103021.375
+validation mean_absolute_error: 740.1904907226562
+validation lateness: 0.2722107768058777
+validation earliness: 0.18548588454723358
+Time taken for epoch: 91.20s
+
+Epoch 9/200
+train loss: 792374.3125
+train mean_absolute_error: 654.8250732421875
+train lateness: 0.19738441705703735
+train earliness: 0.24181590974330902
+validation loss: 1057670.875
+validation mean_absolute_error: 782.5786743164062
+validation lateness: 0.17896907031536102
+validation earliness: 0.36488792300224304
+Time taken for epoch: 88.82s
+The validation tracker metric at 740.1904907226562 hasn't increased  in 1 epochs
+
+Epoch 10/200
+train loss: 789082.4375
+train mean_absolute_error: 653.5121459960938
+train lateness: 0.19607006013393402
+train earliness: 0.2408115714788437
+validation loss: 1016833.8125
+validation mean_absolute_error: 738.6361083984375
+validation lateness: 0.211228147149086
+validation earliness: 0.27991044521331787
+Time taken for epoch: 89.26s
+
+Epoch 11/200
+train loss: 784673.3125
+train mean_absolute_error: 651.0872802734375
+train lateness: 0.19677680730819702
+train earliness: 0.23978880047798157
+validation loss: 1014093.5
+validation mean_absolute_error: 724.6219482421875
+validation lateness: 0.234924778342247
+validation earliness: 0.23212045431137085
+Time taken for epoch: 88.64s
+
+Epoch 12/200
+train loss: 779772.5625
+train mean_absolute_error: 649.4171142578125
+train lateness: 0.19484049081802368
+train earliness: 0.23912738263607025
+validation loss: 1055941.875
+validation mean_absolute_error: 727.644775390625
+validation lateness: 0.25317907333374023
+validation earliness: 0.20498085021972656
+Time taken for epoch: 89.00s
+The validation tracker metric at 724.6219482421875 hasn't increased  in 1 epochs
+
+Epoch 13/200
+train loss: 775949.75
+train mean_absolute_error: 647.6965942382812
+train lateness: 0.19508273899555206
+train earliness: 0.23686720430850983
+validation loss: 1016455.1875
+validation mean_absolute_error: 740.1226806640625
+validation lateness: 0.2112121880054474
+validation earliness: 0.28277137875556946
+Time taken for epoch: 88.63s
+The validation tracker metric at 724.6219482421875 hasn't increased  in 2 epochs
+
+Epoch 14/200
+train loss: 774357.5
+train mean_absolute_error: 646.2266845703125
+train lateness: 0.19534127414226532
+train earliness: 0.23545891046524048
+validation loss: 1013195.0625
+validation mean_absolute_error: 764.1280517578125
+validation lateness: 0.17439106106758118
+validation earliness: 0.35349929332733154
+Time taken for epoch: 88.96s
+The validation tracker metric at 724.6219482421875 hasn't increased  in 3 epochs
+
+Epoch 15/200
+train loss: 772955.1875
+train mean_absolute_error: 645.6400756835938
+train lateness: 0.19420428574085236
+train earliness: 0.2363818883895874
+validation loss: 1016456.3125
+validation mean_absolute_error: 718.3045043945312
+validation lateness: 0.23989231884479523
+validation earliness: 0.21464082598686218
+Time taken for epoch: 89.24s
+
+Epoch 16/200
+train loss: 769962.375
+train mean_absolute_error: 644.0599975585938
+train lateness: 0.19395406544208527
+train earliness: 0.23566493391990662
+validation loss: 1023987.375
+validation mean_absolute_error: 715.5383911132812
+validation lateness: 0.2534657120704651
+validation earliness: 0.194846048951149
+Time taken for epoch: 90.98s
+
+Epoch 17/200
+train loss: 767251.875
+train mean_absolute_error: 643.062744140625
+train lateness: 0.19346684217453003
+train earliness: 0.23363448679447174
+validation loss: 989905.125
+validation mean_absolute_error: 714.04296875
+validation lateness: 0.2273598462343216
+validation earliness: 0.23239116370677948
+Time taken for epoch: 90.33s
+
+Epoch 18/200
+train loss: 764801.9375
+train mean_absolute_error: 641.4415893554688
+train lateness: 0.19211629033088684
+train earliness: 0.2345808893442154
+validation loss: 982738.5625
+validation mean_absolute_error: 732.3466186523438
+validation lateness: 0.20281045138835907
+validation earliness: 0.28198954463005066
+Time taken for epoch: 90.31s
+The validation tracker metric at 714.04296875 hasn't increased  in 1 epochs
+
+Epoch 19/200
+train loss: 766588.625
+train mean_absolute_error: 642.8037109375
+train lateness: 0.1935172975063324
+train earliness: 0.2341006100177765
+validation loss: 979850.5
+validation mean_absolute_error: 732.7913818359375
+validation lateness: 0.19894765317440033
+validation earliness: 0.29032033681869507
+Time taken for epoch: 89.15s
+The validation tracker metric at 714.04296875 hasn't increased  in 2 epochs
+
+Epoch 20/200
+train loss: 762842.5
+train mean_absolute_error: 641.13916015625
+train lateness: 0.19353969395160675
+train earliness: 0.2334699183702469
+validation loss: 1019869.1875
+validation mean_absolute_error: 773.315673828125
+validation lateness: 0.16969861090183258
+validation earliness: 0.3663734197616577
+Time taken for epoch: 90.61s
+The validation tracker metric at 714.04296875 hasn't increased  in 3 epochs
+
+Epoch 21/200
+train loss: 762707.5
+train mean_absolute_error: 641.0753173828125
+train lateness: 0.1935652792453766
+train earliness: 0.23398751020431519
+validation loss: 1030288.5625
+validation mean_absolute_error: 779.97607421875
+validation lateness: 0.16363072395324707
+validation earliness: 0.3747316896915436
+Time taken for epoch: 90.01s
+The validation tracker metric at 714.04296875 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.000750000006519258
+
+Epoch 22/200
+train loss: 756959.8125
+train mean_absolute_error: 638.7416381835938
+train lateness: 0.19240227341651917
+train earliness: 0.23267652094364166
+validation loss: 969008.25
+validation mean_absolute_error: 719.1168823242188
+validation lateness: 0.20892177522182465
+validation earliness: 0.26478061079978943
+Time taken for epoch: 90.29s
+The validation tracker metric at 714.04296875 hasn't increased  in 5 epochs
+
+Epoch 23/200
+train loss: 755530.1875
+train mean_absolute_error: 638.3297119140625
+train lateness: 0.19261741638183594
+train earliness: 0.23258720338344574
+validation loss: 976995.625
+validation mean_absolute_error: 727.461669921875
+validation lateness: 0.20659509301185608
+validation earliness: 0.27345743775367737
+Time taken for epoch: 91.73s
+The validation tracker metric at 714.04296875 hasn't increased  in 6 epochs
+
+Epoch 24/200
+train loss: 753646.25
+train mean_absolute_error: 636.675537109375
+train lateness: 0.1918901801109314
+train earliness: 0.23089192807674408
+validation loss: 964133.4375
+validation mean_absolute_error: 733.3156127929688
+validation lateness: 0.18854932487010956
+validation earliness: 0.30281370878219604
+Time taken for epoch: 90.76s
+The validation tracker metric at 714.04296875 hasn't increased  in 7 epochs
+
+Epoch 25/200
+train loss: 755058.875
+train mean_absolute_error: 638.1286010742188
+train lateness: 0.19255226850509644
+train earliness: 0.2318478524684906
+validation loss: 960986.5625
+validation mean_absolute_error: 731.6306762695312
+validation lateness: 0.18860872089862823
+validation earliness: 0.3022547662258148
+Time taken for epoch: 90.95s
+Training stopped due to unimproved results over 8 epochs
+--- Best performance found at epoch 16 --
+Best value of tracked metric: 714.04296875
+Best mean_absolute_error: 714.04296875
+Best lateness: 0.2273598462343216
+Best earliness: 0.23239116370677948
+-------------------------------
+New job directory is /home/alirachidi/doordash/prediction/cache/train_53/3
+--- training dataset contains 143646 elements ---
+--- validation dataset contains 35909 elements ---
+Model: "sequential_3"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_6 (Conv2D)           (None, 5, 19, 32)         320       
+                                                                 
+ conv2d_7 (Conv2D)           (None, 5, 19, 64)         18496     
+                                                                 
+ batch_normalization_3 (Batc  (None, 5, 19, 64)        256       
+ hNormalization)                                                 
+                                                                 
+ dropout_9 (Dropout)         (None, 5, 19, 64)         0         
+                                                                 
+ reshape_3 (Reshape)         (None, 5, 1216)           0         
+                                                                 
+ bidirectional_3 (Bidirectio  (None, 5, 64)            319744    
+ nal)                                                            
+                                                                 
+ dropout_10 (Dropout)        (None, 5, 64)             0         
+                                                                 
+ dense_6 (Dense)             (None, 5, 100)            6500      
+                                                                 
+ dropout_11 (Dropout)        (None, 5, 100)            0         
+                                                                 
+ flatten_3 (Flatten)         (None, 500)               0         
+                                                                 
+ dense_7 (Dense)             (None, 1)                 501       
+                                                                 
+=================================================================
+Total params: 345,817
+Trainable params: 345,689
+Non-trainable params: 128
+_________________________________________________________________
+
+Epoch 1/200
+train loss: 5364313.5
+train mean_absolute_error: 1911.57666015625
+train lateness: 0.7892809510231018
+train earliness: 0.03427235409617424
+validation loss: 930875.375
+validation mean_absolute_error: 720.5035400390625
+validation lateness: 0.22743520140647888
+validation earliness: 0.261973112821579
+Time taken for epoch: 91.57s
+
+Epoch 2/200
+train loss: 1238031.0
+train mean_absolute_error: 835.3990478515625
+train lateness: 0.2421702891588211
+train earliness: 0.31411081552505493
+validation loss: 952601.5625
+validation mean_absolute_error: 755.327880859375
+validation lateness: 0.18146082758903503
+validation earliness: 0.35078585147857666
+Time taken for epoch: 91.34s
+The validation tracker metric at 720.5035400390625 hasn't increased  in 1 epochs
+
+Epoch 3/200
+train loss: 1131988.125
+train mean_absolute_error: 787.6073608398438
+train lateness: 0.2364465892314911
+train earliness: 0.28846874833106995
+validation loss: 929651.0625
+validation mean_absolute_error: 679.8368530273438
+validation lateness: 0.3064911365509033
+validation earliness: 0.11384418606758118
+Time taken for epoch: 89.89s
+
+Epoch 4/200
+train loss: 953875.6875
+train mean_absolute_error: 716.8320922851562
+train lateness: 0.21389292180538177
+train earliness: 0.26456406712532043
+validation loss: 869698.625
+validation mean_absolute_error: 647.7366333007812
+validation lateness: 0.29171890020370483
+validation earliness: 0.09691192209720612
+Time taken for epoch: 90.27s
+
+Epoch 5/200
+train loss: 877489.4375
+train mean_absolute_error: 685.877685546875
+train lateness: 0.20514175295829773
+train earliness: 0.25179800391197205
+validation loss: 737394.5625
+validation mean_absolute_error: 628.6471557617188
+validation lateness: 0.19773007929325104
+validation earliness: 0.22469589114189148
+Time taken for epoch: 92.08s
+
+Epoch 6/200
+train loss: 861868.3125
+train mean_absolute_error: 680.6824951171875
+train lateness: 0.20312392711639404
+train earliness: 0.24903236329555511
+validation loss: 701929.875
+validation mean_absolute_error: 609.0980834960938
+validation lateness: 0.19551342725753784
+validation earliness: 0.205636665225029
+Time taken for epoch: 93.79s
+
+Epoch 7/200
+train loss: 849358.8125
+train mean_absolute_error: 676.4374389648438
+train lateness: 0.2029687911272049
+train earliness: 0.24660545587539673
+validation loss: 706698.4375
+validation mean_absolute_error: 628.0671997070312
+validation lateness: 0.16708527505397797
+validation earliness: 0.2691572904586792
+Time taken for epoch: 92.60s
+The validation tracker metric at 609.0980834960938 hasn't increased  in 1 epochs
+
+Epoch 8/200
+train loss: 840654.1875
+train mean_absolute_error: 672.5555419921875
+train lateness: 0.20089739561080933
+train earliness: 0.24608281254768372
+validation loss: 712153.0625
+validation mean_absolute_error: 610.5792236328125
+validation lateness: 0.2016247808933258
+validation earliness: 0.19804424047470093
+Time taken for epoch: 92.01s
+The validation tracker metric at 609.0980834960938 hasn't increased  in 2 epochs
+
+Epoch 9/200
+train loss: 835707.25
+train mean_absolute_error: 671.1846313476562
+train lateness: 0.2009255290031433
+train earliness: 0.2450464814901352
+validation loss: 716255.0
+validation mean_absolute_error: 641.6678466796875
+validation lateness: 0.15350031852722168
+validation earliness: 0.3011021912097931
+Time taken for epoch: 89.46s
+The validation tracker metric at 609.0980834960938 hasn't increased  in 3 epochs
+
+Epoch 10/200
+train loss: 831582.0
+train mean_absolute_error: 669.524658203125
+train lateness: 0.19948676228523254
+train earliness: 0.24430929124355316
+validation loss: 705695.4375
+validation mean_absolute_error: 604.8588256835938
+validation lateness: 0.2049214392900467
+validation earliness: 0.1872679740190506
+Time taken for epoch: 89.34s
+
+Epoch 11/200
+train loss: 830198.1875
+train mean_absolute_error: 668.5811157226562
+train lateness: 0.20010794699192047
+train earliness: 0.24415232241153717
+validation loss: 707807.875
+validation mean_absolute_error: 630.7890014648438
+validation lateness: 0.1639971137046814
+validation earliness: 0.2711654305458069
+Time taken for epoch: 91.98s
+The validation tracker metric at 604.8588256835938 hasn't increased  in 1 epochs
+
+Epoch 12/200
+train loss: 827255.0
+train mean_absolute_error: 668.184814453125
+train lateness: 0.20018629729747772
+train earliness: 0.2435077428817749
+validation loss: 696964.1875
+validation mean_absolute_error: 618.3862915039062
+validation lateness: 0.17223380506038666
+validation earliness: 0.2500183582305908
+Time taken for epoch: 90.92s
+The validation tracker metric at 604.8588256835938 hasn't increased  in 2 epochs
+
+Epoch 13/200
+train loss: 825266.125
+train mean_absolute_error: 667.3308715820312
+train lateness: 0.19912464916706085
+train earliness: 0.24303363263607025
+validation loss: 695304.25
+validation mean_absolute_error: 609.3158569335938
+validation lateness: 0.18836553394794464
+validation earliness: 0.21840354800224304
+Time taken for epoch: 91.13s
+The validation tracker metric at 604.8588256835938 hasn't increased  in 3 epochs
+
+Epoch 14/200
+train loss: 824128.9375
+train mean_absolute_error: 666.5758666992188
+train lateness: 0.19927722215652466
+train earliness: 0.24298934638500214
+validation loss: 706042.5625
+validation mean_absolute_error: 631.9533081054688
+validation lateness: 0.16000834107398987
+validation earliness: 0.2806471884250641
+Time taken for epoch: 91.59s
+The validation tracker metric at 604.8588256835938 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.000750000006519258
+
+Epoch 15/200
+train loss: 815172.4375
+train mean_absolute_error: 662.9144287109375
+train lateness: 0.19877463579177856
+train earliness: 0.24173307418823242
+validation loss: 697770.75
+validation mean_absolute_error: 607.6170654296875
+validation lateness: 0.1938122808933258
+validation earliness: 0.20856696367263794
+Time taken for epoch: 90.81s
+The validation tracker metric at 604.8588256835938 hasn't increased  in 5 epochs
+
+Epoch 16/200
+train loss: 814010.1875
+train mean_absolute_error: 662.1813354492188
+train lateness: 0.1982463002204895
+train earliness: 0.24004922807216644
+validation loss: 707539.25
+validation mean_absolute_error: 600.5813598632812
+validation lateness: 0.21996437013149261
+validation earliness: 0.16223496198654175
+Time taken for epoch: 90.18s
+
+Epoch 17/200
+train loss: 811910.5625
+train mean_absolute_error: 661.2747192382812
+train lateness: 0.19820278882980347
+train earliness: 0.24060381948947906
+validation loss: 706160.125
+validation mean_absolute_error: 605.7632446289062
+validation lateness: 0.20587268471717834
+validation earliness: 0.1859634965658188
+Time taken for epoch: 94.46s
+The validation tracker metric at 600.5813598632812 hasn't increased  in 1 epochs
+
+Epoch 18/200
+train loss: 810111.75
+train mean_absolute_error: 661.2743530273438
+train lateness: 0.19770705699920654
+train earliness: 0.240903839468956
+validation loss: 713298.5625
+validation mean_absolute_error: 599.0517578125
+validation lateness: 0.22794191539287567
+validation earliness: 0.14562402665615082
+Time taken for epoch: 94.27s
+
+Epoch 19/200
+train loss: 809690.1875
+train mean_absolute_error: 660.9189453125
+train lateness: 0.19837038218975067
+train earliness: 0.23968815803527832
+validation loss: 702542.25
+validation mean_absolute_error: 607.3846435546875
+validation lateness: 0.19941967725753784
+validation earliness: 0.1980789303779602
+Time taken for epoch: 93.74s
+The validation tracker metric at 599.0517578125 hasn't increased  in 1 epochs
+
+Epoch 20/200
+train loss: 805283.8125
+train mean_absolute_error: 658.4156494140625
+train lateness: 0.1966070681810379
+train earliness: 0.23918263614177704
+validation loss: 690631.8125
+validation mean_absolute_error: 612.4630126953125
+validation lateness: 0.18028949201107025
+validation earliness: 0.23444119095802307
+Time taken for epoch: 92.92s
+The validation tracker metric at 599.0517578125 hasn't increased  in 2 epochs
+
+Epoch 21/200
+train loss: 806018.875
+train mean_absolute_error: 659.3841552734375
+train lateness: 0.19707387685775757
+train earliness: 0.239119753241539
+validation loss: 688261.0
+validation mean_absolute_error: 608.5121459960938
+validation lateness: 0.18283186852931976
+validation earliness: 0.22315099835395813
+Time taken for epoch: 88.82s
+The validation tracker metric at 599.0517578125 hasn't increased  in 3 epochs
+
+Epoch 22/200
+train loss: 805187.5
+train mean_absolute_error: 658.8922729492188
+train lateness: 0.1979759931564331
+train earliness: 0.2386591136455536
+validation loss: 693735.9375
+validation mean_absolute_error: 614.9154663085938
+validation lateness: 0.17774274945259094
+validation earliness: 0.23753811419010162
+Time taken for epoch: 89.46s
+The validation tracker metric at 599.0517578125 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.0005624999757856131
+
+Epoch 23/200
+train loss: 801017.375
+train mean_absolute_error: 656.9801635742188
+train lateness: 0.1975717395544052
+train earliness: 0.23725654184818268
+validation loss: 689667.125
+validation mean_absolute_error: 614.760986328125
+validation lateness: 0.1753654181957245
+validation earliness: 0.2427213490009308
+Time taken for epoch: 89.34s
+The validation tracker metric at 599.0517578125 hasn't increased  in 5 epochs
+
+Epoch 24/200
+train loss: 798489.3125
+train mean_absolute_error: 655.71875
+train lateness: 0.19646547734737396
+train earliness: 0.23761360347270966
+validation loss: 694246.875
+validation mean_absolute_error: 619.840576171875
+validation lateness: 0.16974207758903503
+validation earliness: 0.2540549635887146
+Time taken for epoch: 90.77s
+The validation tracker metric at 599.0517578125 hasn't increased  in 6 epochs
+
+Epoch 25/200
+train loss: 797684.4375
+train mean_absolute_error: 655.627197265625
+train lateness: 0.19740638136863708
+train earliness: 0.2373436540365219
+validation loss: 689704.0625
+validation mean_absolute_error: 614.1359252929688
+validation lateness: 0.17688997089862823
+validation earliness: 0.2390785962343216
+Time taken for epoch: 89.59s
+The validation tracker metric at 599.0517578125 hasn't increased  in 7 epochs
+
+Epoch 26/200
+train loss: 797190.5
+train mean_absolute_error: 655.2086181640625
+train lateness: 0.19702522456645966
+train earliness: 0.23623713850975037
+validation loss: 692690.875
+validation mean_absolute_error: 619.2767333984375
+validation lateness: 0.16984771192073822
+validation earliness: 0.25623971223831177
+Time taken for epoch: 89.38s
+Training stopped due to unimproved results over 8 epochs
+--- Best performance found at epoch 17 --
+Best value of tracked metric: 599.0517578125
+Best mean_absolute_error: 599.0517578125
+Best lateness: 0.22794191539287567
+Best earliness: 0.14562402665615082
+-------------------------------
+New job directory is /home/alirachidi/doordash/prediction/cache/train_53/4
+--- training dataset contains 143646 elements ---
+--- validation dataset contains 35909 elements ---
+Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_8 (Conv2D)           (None, 5, 19, 32)         320       
+                                                                 
+ conv2d_9 (Conv2D)           (None, 5, 19, 64)         18496     
+                                                                 
+ batch_normalization_4 (Batc  (None, 5, 19, 64)        256       
+ hNormalization)                                                 
+                                                                 
+ dropout_12 (Dropout)        (None, 5, 19, 64)         0         
+                                                                 
+ reshape_4 (Reshape)         (None, 5, 1216)           0         
+                                                                 
+ bidirectional_4 (Bidirectio  (None, 5, 64)            319744    
+ nal)                                                            
+                                                                 
+ dropout_13 (Dropout)        (None, 5, 64)             0         
+                                                                 
+ dense_8 (Dense)             (None, 5, 100)            6500      
+                                                                 
+ dropout_14 (Dropout)        (None, 5, 100)            0         
+                                                                 
+ flatten_4 (Flatten)         (None, 500)               0         
+                                                                 
+ dense_9 (Dense)             (None, 1)                 501       
+                                                                 
+=================================================================
+Total params: 345,817
+Trainable params: 345,689
+Non-trainable params: 128
+_________________________________________________________________
+
+Epoch 1/200
+train loss: 5256527.0
+train mean_absolute_error: 1910.642333984375
+train lateness: 0.8086278438568115
+train earliness: 0.024346865713596344
+validation loss: 1424129.125
+validation mean_absolute_error: 856.8382568359375
+validation lateness: 0.3648560345172882
+validation earliness: 0.15446750819683075
+Time taken for epoch: 89.08s
+
+Epoch 2/200
+train loss: 1162673.875
+train mean_absolute_error: 802.3628540039062
+train lateness: 0.23845170438289642
+train earliness: 0.2955497205257416
+validation loss: 1264733.75
+validation mean_absolute_error: 833.99609375
+validation lateness: 0.28477510809898376
+validation earliness: 0.25897905230522156
+Time taken for epoch: 88.92s
+
+Epoch 3/200
+train loss: 1085485.75
+train mean_absolute_error: 769.1035766601562
+train lateness: 0.23224884271621704
+train earliness: 0.27982136607170105
+validation loss: 1435093.875
+validation mean_absolute_error: 841.4449462890625
+validation lateness: 0.4159107804298401
+validation earliness: 0.0706019401550293
+Time taken for epoch: 92.81s
+The validation tracker metric at 833.99609375 hasn't increased  in 1 epochs
+
+Epoch 4/200
+train loss: 933547.25
+train mean_absolute_error: 707.4223022460938
+train lateness: 0.21244797110557556
+train earliness: 0.26118606328964233
+validation loss: 977149.3125
+validation mean_absolute_error: 744.9506225585938
+validation lateness: 0.2002449482679367
+validation earliness: 0.31478002667427063
+Time taken for epoch: 92.06s
+
+Epoch 5/200
+train loss: 866401.6875
+train mean_absolute_error: 681.6135864257812
+train lateness: 0.204916313290596
+train earliness: 0.24963758885860443
+validation loss: 898520.875
+validation mean_absolute_error: 703.4339599609375
+validation lateness: 0.20227621495723724
+validation earliness: 0.2764921486377716
+Time taken for epoch: 88.38s
+
+Epoch 6/200
+train loss: 842974.9375
+train mean_absolute_error: 672.5159912109375
+train lateness: 0.20168428122997284
+train earliness: 0.24683021008968353
+validation loss: 910221.9375
+validation mean_absolute_error: 690.6744384765625
+validation lateness: 0.23734992742538452
+validation earliness: 0.21449172496795654
+Time taken for epoch: 90.18s
+
+Epoch 7/200
+train loss: 830351.6875
+train mean_absolute_error: 668.65087890625
+train lateness: 0.20005637407302856
+train earliness: 0.24607184529304504
+validation loss: 900416.1875
+validation mean_absolute_error: 679.656005859375
+validation lateness: 0.24434436857700348
+validation earliness: 0.1899973303079605
+Time taken for epoch: 90.44s
+
+Epoch 8/200
+train loss: 820836.4375
+train mean_absolute_error: 664.7933959960938
+train lateness: 0.19837655127048492
+train earliness: 0.24357172846794128
+validation loss: 928709.1875
+validation mean_absolute_error: 681.1063232421875
+validation lateness: 0.2772245407104492
+validation earliness: 0.1448366343975067
+Time taken for epoch: 91.00s
+The validation tracker metric at 679.656005859375 hasn't increased  in 1 epochs
+
+Epoch 9/200
+train loss: 815358.6875
+train mean_absolute_error: 661.7222900390625
+train lateness: 0.1985134333372116
+train earliness: 0.24118544161319733
+validation loss: 885961.9375
+validation mean_absolute_error: 676.3099365234375
+validation lateness: 0.24027305841445923
+validation earliness: 0.19426119327545166
+Time taken for epoch: 91.62s
+
+Epoch 10/200
+train loss: 809151.0
+train mean_absolute_error: 659.6043701171875
+train lateness: 0.19737926125526428
+train earliness: 0.2414986491203308
+validation loss: 863682.5625
+validation mean_absolute_error: 688.3084716796875
+validation lateness: 0.20097173750400543
+validation earliness: 0.26483282446861267
+Time taken for epoch: 91.50s
+The validation tracker metric at 676.3099365234375 hasn't increased  in 1 epochs
+
+Epoch 11/200
+train loss: 806898.875
+train mean_absolute_error: 658.396240234375
+train lateness: 0.19814684987068176
+train earliness: 0.23912960290908813
+validation loss: 876845.125
+validation mean_absolute_error: 676.9895629882812
+validation lateness: 0.23247210681438446
+validation earliness: 0.21058547496795654
+Time taken for epoch: 89.49s
+The validation tracker metric at 676.3099365234375 hasn't increased  in 2 epochs
+
+Epoch 12/200
+train loss: 800977.625
+train mean_absolute_error: 656.9576416015625
+train lateness: 0.1972300410270691
+train earliness: 0.24037222564220428
+validation loss: 876656.4375
+validation mean_absolute_error: 670.1552124023438
+validation lateness: 0.24403735995292664
+validation earliness: 0.18457090854644775
+Time taken for epoch: 91.70s
+
+Epoch 13/200
+train loss: 792523.1875
+train mean_absolute_error: 652.7095336914062
+train lateness: 0.19614721834659576
+train earliness: 0.23748086392879486
+validation loss: 957493.0625
+validation mean_absolute_error: 684.3988647460938
+validation lateness: 0.2958205044269562
+validation earliness: 0.1206173300743103
+Time taken for epoch: 91.11s
+The validation tracker metric at 670.1552124023438 hasn't increased  in 1 epochs
+
+Epoch 14/200
+train loss: 792701.3125
+train mean_absolute_error: 653.1079711914062
+train lateness: 0.1955275684595108
+train earliness: 0.23881158232688904
+validation loss: 855340.625
+validation mean_absolute_error: 668.3602294921875
+validation lateness: 0.23094317317008972
+validation earliness: 0.201511949300766
+Time taken for epoch: 93.60s
+
+Epoch 15/200
+train loss: 787424.3125
+train mean_absolute_error: 651.54931640625
+train lateness: 0.1958867758512497
+train earliness: 0.23737728595733643
+validation loss: 928635.6875
+validation mean_absolute_error: 677.8869018554688
+validation lateness: 0.2729056775569916
+validation earliness: 0.14570096135139465
+Time taken for epoch: 92.60s
+The validation tracker metric at 668.3602294921875 hasn't increased  in 1 epochs
+
+Epoch 16/200
+train loss: 785971.1875
+train mean_absolute_error: 651.0439453125
+train lateness: 0.19561313092708588
+train earliness: 0.23708637058734894
+validation loss: 892523.125
+validation mean_absolute_error: 673.3775634765625
+validation lateness: 0.260019987821579
+validation earliness: 0.16598652303218842
+Time taken for epoch: 90.77s
+The validation tracker metric at 668.3602294921875 hasn't increased  in 2 epochs
+
+Epoch 17/200
+train loss: 781447.375
+train mean_absolute_error: 648.42236328125
+train lateness: 0.19451157748699188
+train earliness: 0.2348121553659439
+validation loss: 866662.75
+validation mean_absolute_error: 671.9605102539062
+validation lateness: 0.22989065945148468
+validation earliness: 0.20687615871429443
+Time taken for epoch: 90.79s
+The validation tracker metric at 668.3602294921875 hasn't increased  in 3 epochs
+
+Epoch 18/200
+train loss: 783408.5
+train mean_absolute_error: 649.5875244140625
+train lateness: 0.19454452395439148
+train earliness: 0.23634979128837585
+validation loss: 845828.5
+validation mean_absolute_error: 675.3255615234375
+validation lateness: 0.21054479479789734
+validation earliness: 0.23884856700897217
+Time taken for epoch: 92.64s
+The validation tracker metric at 668.3602294921875 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.000750000006519258
+
+Epoch 19/200
+train loss: 775914.9375
+train mean_absolute_error: 645.932861328125
+train lateness: 0.19471941888332367
+train earliness: 0.23309201002120972
+validation loss: 869859.8125
+validation mean_absolute_error: 666.4271850585938
+validation lateness: 0.2461555302143097
+validation earliness: 0.1772926300764084
+Time taken for epoch: 89.91s
+
+Epoch 20/200
+train loss: 771585.0
+train mean_absolute_error: 644.7120971679688
+train lateness: 0.1937875896692276
+train earliness: 0.23310677707195282
+validation loss: 843265.9375
+validation mean_absolute_error: 681.1563110351562
+validation lateness: 0.19934871792793274
+validation earliness: 0.25960174202919006
+Time taken for epoch: 90.16s
+The validation tracker metric at 666.4271850585938 hasn't increased  in 1 epochs
+
+Epoch 21/200
+train loss: 772679.5625
+train mean_absolute_error: 644.896728515625
+train lateness: 0.1938900500535965
+train earliness: 0.2335105985403061
+validation loss: 841056.5625
+validation mean_absolute_error: 675.724853515625
+validation lateness: 0.205373153090477
+validation earliness: 0.24308492243289948
+Time taken for epoch: 91.82s
+The validation tracker metric at 666.4271850585938 hasn't increased  in 2 epochs
+
+Epoch 22/200
+train loss: 770708.1875
+train mean_absolute_error: 644.3384399414062
+train lateness: 0.1941359043121338
+train earliness: 0.23309646546840668
+validation loss: 863134.75
+validation mean_absolute_error: 703.5272216796875
+validation lateness: 0.17699283361434937
+validation earliness: 0.3100600838661194
+Time taken for epoch: 90.22s
+The validation tracker metric at 666.4271850585938 hasn't increased  in 3 epochs
+
+Epoch 23/200
+train loss: 769363.1875
+train mean_absolute_error: 643.6304931640625
+train lateness: 0.19357872009277344
+train earliness: 0.23391182720661163
+validation loss: 957856.0
+validation mean_absolute_error: 682.2677612304688
+validation lateness: 0.2977851927280426
+validation earliness: 0.1160668134689331
+Time taken for epoch: 89.32s
+The validation tracker metric at 666.4271850585938 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.0005624999757856131
+
+Epoch 24/200
+train loss: 766805.6875
+train mean_absolute_error: 642.0125122070312
+train lateness: 0.19374452531337738
+train earliness: 0.23084807395935059
+validation loss: 861973.75
+validation mean_absolute_error: 666.250732421875
+validation lateness: 0.2380492240190506
+validation earliness: 0.18789508938789368
+Time taken for epoch: 90.12s
+
+Epoch 25/200
+train loss: 761913.75
+train mean_absolute_error: 640.3502197265625
+train lateness: 0.19283948838710785
+train earliness: 0.231384739279747
+validation loss: 885183.125
+validation mean_absolute_error: 667.1406860351562
+validation lateness: 0.26025599241256714
+validation earliness: 0.1582840532064438
+Time taken for epoch: 92.32s
+The validation tracker metric at 666.250732421875 hasn't increased  in 1 epochs
+
+Epoch 26/200
+train loss: 762240.75
+train mean_absolute_error: 639.93603515625
+train lateness: 0.19260025024414062
+train earliness: 0.23069079220294952
+validation loss: 846776.1875
+validation mean_absolute_error: 669.0326538085938
+validation lateness: 0.22150486707687378
+validation earliness: 0.21483777463436127
+Time taken for epoch: 91.34s
+The validation tracker metric at 666.250732421875 hasn't increased  in 2 epochs
+
+Epoch 27/200
+train loss: 761819.5
+train mean_absolute_error: 640.8282470703125
+train lateness: 0.19223400950431824
+train earliness: 0.23202753067016602
+validation loss: 854690.4375
+validation mean_absolute_error: 664.8565673828125
+validation lateness: 0.23696042597293854
+validation earliness: 0.1903824508190155
+Time taken for epoch: 90.78s
+
+Epoch 28/200
+train loss: 759332.5
+train mean_absolute_error: 639.4507446289062
+train lateness: 0.19244518876075745
+train earliness: 0.23088935017585754
+validation loss: 857058.875
+validation mean_absolute_error: 667.2188110351562
+validation lateness: 0.2338838130235672
+validation earliness: 0.19761726260185242
+Time taken for epoch: 91.63s
+The validation tracker metric at 664.8565673828125 hasn't increased  in 1 epochs
+
+Epoch 29/200
+train loss: 757409.125
+train mean_absolute_error: 637.774658203125
+train lateness: 0.1912093460559845
+train earliness: 0.22927318513393402
+validation loss: 860533.9375
+validation mean_absolute_error: 665.3065795898438
+validation lateness: 0.24289794266223907
+validation earliness: 0.18330112099647522
+Time taken for epoch: 91.91s
+The validation tracker metric at 664.8565673828125 hasn't increased  in 2 epochs
+
+Epoch 30/200
+train loss: 758010.4375
+train mean_absolute_error: 638.9549560546875
+train lateness: 0.1923145055770874
+train earliness: 0.2285330891609192
+validation loss: 843310.625
+validation mean_absolute_error: 668.173828125
+validation lateness: 0.22014537453651428
+validation earliness: 0.21632324159145355
+Time taken for epoch: 92.90s
+The validation tracker metric at 664.8565673828125 hasn't increased  in 3 epochs
+
+Epoch 31/200
+train loss: 757945.9375
+train mean_absolute_error: 638.458984375
+train lateness: 0.19225408136844635
+train earliness: 0.23018167912960052
+validation loss: 845274.3125
+validation mean_absolute_error: 670.3394165039062
+validation lateness: 0.21803876757621765
+validation earliness: 0.22308601438999176
+Time taken for epoch: 92.74s
+The validation tracker metric at 664.8565673828125 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.0004218749818392098
+
+Epoch 32/200
+train loss: 754020.4375
+train mean_absolute_error: 637.4559936523438
+train lateness: 0.1922672986984253
+train earliness: 0.2291400134563446
+validation loss: 856473.375
+validation mean_absolute_error: 667.4932861328125
+validation lateness: 0.23314107954502106
+validation earliness: 0.1974797248840332
+Time taken for epoch: 94.08s
+The validation tracker metric at 664.8565673828125 hasn't increased  in 5 epochs
+
+Epoch 33/200
+train loss: 751014.3125
+train mean_absolute_error: 635.8980712890625
+train lateness: 0.1919655054807663
+train earliness: 0.22928160429000854
+validation loss: 862398.0
+validation mean_absolute_error: 664.7998046875
+validation lateness: 0.2427922934293747
+validation earliness: 0.18070372939109802
+Time taken for epoch: 89.53s
+
+Epoch 34/200
+train loss: 750900.0
+train mean_absolute_error: 635.9515991210938
+train lateness: 0.1921015977859497
+train earliness: 0.2288668006658554
+validation loss: 858743.6875
+validation mean_absolute_error: 664.712158203125
+validation lateness: 0.24058003723621368
+validation earliness: 0.185501828789711
+Time taken for epoch: 91.13s
+
+Epoch 35/200
+train loss: 751480.5625
+train mean_absolute_error: 635.8801879882812
+train lateness: 0.19146429002285004
+train earliness: 0.2279459685087204
+validation loss: 867830.0625
+validation mean_absolute_error: 665.4534301757812
+validation lateness: 0.2463684380054474
+validation earliness: 0.1765889674425125
+Time taken for epoch: 90.73s
+The validation tracker metric at 664.712158203125 hasn't increased  in 1 epochs
+
+Epoch 36/200
+train loss: 750558.125
+train mean_absolute_error: 635.6632080078125
+train lateness: 0.19200901687145233
+train earliness: 0.22824424505233765
+validation loss: 843383.5625
+validation mean_absolute_error: 685.1682739257812
+validation lateness: 0.19176067411899567
+validation earliness: 0.27288851141929626
+Time taken for epoch: 89.32s
+The validation tracker metric at 664.712158203125 hasn't increased  in 2 epochs
+
+Epoch 37/200
+train loss: 747058.5625
+train mean_absolute_error: 634.4010620117188
+train lateness: 0.19127662479877472
+train earliness: 0.22854818403720856
+validation loss: 858755.5625
+validation mean_absolute_error: 665.8112182617188
+validation lateness: 0.23754249513149261
+validation earliness: 0.1890113800764084
+Time taken for epoch: 92.24s
+The validation tracker metric at 664.712158203125 hasn't increased  in 3 epochs
+
+Epoch 38/200
+train loss: 745860.0
+train mean_absolute_error: 633.7582397460938
+train lateness: 0.19093793630599976
+train earliness: 0.2268097698688507
+validation loss: 851770.625
+validation mean_absolute_error: 672.525634765625
+validation lateness: 0.21910004317760468
+validation earliness: 0.22165995836257935
+Time taken for epoch: 90.12s
+The validation tracker metric at 664.712158203125 hasn't increased  in 4 epochs
+Lr has been adjusted to 0.0003164062509313226
+
+Epoch 39/200
+train loss: 743720.5
+train mean_absolute_error: 632.918212890625
+train lateness: 0.1910264939069748
+train earliness: 0.2274615615606308
+validation loss: 851989.5625
+validation mean_absolute_error: 666.0694580078125
+validation lateness: 0.2296634167432785
+validation earliness: 0.19876106083393097
+Time taken for epoch: 91.56s
+The validation tracker metric at 664.712158203125 hasn't increased  in 5 epochs
+
+Epoch 40/200
+train loss: 741473.1875
+train mean_absolute_error: 631.6489868164062
+train lateness: 0.18970252573490143
+train earliness: 0.22636783123016357
+validation loss: 866128.9375
+validation mean_absolute_error: 668.510009765625
+validation lateness: 0.23789572715759277
+validation earliness: 0.19178539514541626
+Time taken for epoch: 90.76s
+The validation tracker metric at 664.712158203125 hasn't increased  in 6 epochs
+
+Epoch 41/200
+train loss: 740535.625
+train mean_absolute_error: 631.9425659179688
+train lateness: 0.19085118174552917
+train earliness: 0.22671468555927277
+validation loss: 860206.0
+validation mean_absolute_error: 669.426025390625
+validation lateness: 0.23143993318080902
+validation earliness: 0.20116589963436127
+Time taken for epoch: 91.73s
+The validation tracker metric at 664.712158203125 hasn't increased  in 7 epochs
+
+Epoch 42/200
+train loss: 741059.5625
+train mean_absolute_error: 631.4353637695312
+train lateness: 0.19112783670425415
+train earliness: 0.2251608967781067
+validation loss: 870033.875
+validation mean_absolute_error: 666.3701171875
+validation lateness: 0.24625839293003082
+validation earliness: 0.1771666556596756
+Time taken for epoch: 91.05s
+Training stopped due to unimproved results over 8 epochs
+--- Best performance found at epoch 33 --
+Best value of tracked metric: 664.712158203125
+Best mean_absolute_error: 664.712158203125
+Best lateness: 0.24058003723621368
+Best earliness: 0.185501828789711
+-------
+Kfold metrics
+mean_absolute_error mean: 645.9698486328125
+mean_absolute_error std: 40.6823616027832
+mean_absolute_error max: 714.04296875
+mean_absolute_error min: 599.0517578125
+lateness mean: 0.22533753514289856
+lateness std: 0.01015475019812584
+lateness max: 0.24058003723621368
+lateness min: 0.209279403090477
+earliness mean: 0.1881127655506134
+earliness std: 0.027865426614880562
+earliness max: 0.23239116370677948
+earliness min: 0.14562402665615082

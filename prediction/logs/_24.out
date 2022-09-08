@@ -1,0 +1,42 @@
+2022-08-15 21:04:23.469329: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-15 21:04:23.469395: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-15 21:04:26.023564: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-15 21:04:26.023605: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-15 21:04:26.023635: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 20583
+Description: adding features
+File dir is ../../doordash/prediction/cache/train_24
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_24/1
+Augmenting...
+Generating prev_orders_avg_by_market_id...
+/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/util/_decorators.py:311: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  return func(*args, **kwargs)
+/home/alirachidi/doordash/prediction/modules/main/processing.py:16: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  df['created_at']).dt.total_seconds() <= 60 * 60]
+Time passed: 889.0214281082153 secs
+Generating prev_orders_avg_by_store_id...
+Time passed: 541.061963558197 secs
+6 features have been added: ['created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_avg_by_market_id', 'prev_orders_avg_by_store_id']
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+(143743, 13)
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_avg_by_market_id', 'prev_orders_avg_by_store_id']
+[0.03854301 0.11076915 0.10736254 0.08459778 0.05794481 0.07847632
+ 0.14945296 0.03532399 0.09160459 0.00763054 0.07271304 0.13738581
+ 0.02819546]
+Val results
+mean absolute error 667.041099
+Kfold metrics
+Kfold average mae: 667.041099 
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_24/2

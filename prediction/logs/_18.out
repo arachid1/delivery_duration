@@ -1,0 +1,69 @@
+2022-08-15 14:51:03.667858: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-15 14:51:03.667921: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-15 14:51:06.242001: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-15 14:51:06.242040: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-15 14:51:06.242057: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 10759
+Description: orig job with adding new features
+File dir is ../../doordash/prediction/cache/train_18
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/1
+Shape of data: (179679, 11)
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+[0.07138709 0.17624576 0.17158993 0.10964137 0.08257618 0.14114877
+ 0.2474109 ]
+Val results
+mean absolute error 687.750867
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/2
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+[0.0639955  0.20104393 0.16609574 0.11502545 0.08612389 0.13886943
+ 0.22884607]
+Val results
+mean absolute error 695.058639
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/3
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+[0.05834612 0.13603817 0.21160471 0.12846897 0.09532385 0.1701172
+ 0.20010097]
+Val results
+mean absolute error 694.619465
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/4
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+[0.07318773 0.19518419 0.14479486 0.1209941  0.08235158 0.14184996
+ 0.24163758]
+Val results
+mean absolute error 694.840406
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/5
+--- training dataset contains 143744 elements ---
+--- validation dataset contains 35935 elements ---
+Fitting...
+Validating...
+[0.07320683 0.16657067 0.1874297  0.11916733 0.0862798  0.14087936
+ 0.2264663 ]
+Val results
+mean absolute error 689.359485
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/6
+Kfold metrics
+Kfold average mae: 692.325773 
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_18/7

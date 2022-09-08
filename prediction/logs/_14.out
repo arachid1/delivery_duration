@@ -1,0 +1,32 @@
+2022-08-15 14:08:24.016880: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-15 14:08:24.016942: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-15 14:08:26.594015: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-15 14:08:26.594056: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-15 14:08:26.594076: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 3201
+Description: random forest regressor
+File dir is ../../doordash/prediction/cache/train_14
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_14/1
+Reading prev_orders_market_id...
+Time passed: 0.13565707206726074 secs
+Reading prev_orders_store_id...
+Time passed: 0.13033318519592285 secs
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+[0.03620327 0.10763985 0.10100315 0.07912176 0.06104454 0.08500338
+ 0.14895162 0.03688794 0.1017443  0.00565585 0.08503067 0.13483639
+ 0.01687726]
+Val results
+mean absolute error 664.731796
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_14/2
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...

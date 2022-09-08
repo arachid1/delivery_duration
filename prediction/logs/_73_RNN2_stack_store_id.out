@@ -1,0 +1,209 @@
+2022-08-30 08:19:47.536195: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-30 08:19:47.536268: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-30 08:19:51.669508: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-30 08:19:51.669572: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-30 08:19:51.669595: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 32148
+Description: RNN2_stack_store_id
+File dir is /home/alirachidi/doordash/prediction/cache/train_73
+--- All variables have been collected. --
+--- Reading /home/alirachidi/doordash/data/historical_market_id_features_v4.csv...
+--- Reading /home/alirachidi/doordash/data/historical_store_id_features_v4.csv...
+--- 25 Decision features (stacking features could be added):
+ ['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'week_day', 'weekend', 'day_of_month', 'month', 'hour', 'day_part', '1_hr_count_by_market_id', '1_hr_count_by_store_id', '1_hr_avg_subtotal_by_market_id', '1_hr_avg_subtotal_by_store_id', '24_hr_avg_time_by_market_id', '24_hr_avg_time_by_store_id', 'long_score_by_market_id', 'short_score_by_market_id', 'long_score_by_store_id', 'short_score_by_store_id', 'trip_to_customer_by_market_id', 'trip_to_customer_by_store_id']
+--- Stacking for store_id done in 1416.803293466568 secs with final number of features: 26 ---
+-------------------------------
+New job directory is /home/alirachidi/doordash/prediction/cache/train_73/0
+2022-08-30 08:43:30.667755: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+--- training dataset has shape: (145940, 5, 26) ---
+--- validation dataset has shape: (33615, 5, 26) ---
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 5, 26, 32)         320       
+                                                                 
+ conv2d_1 (Conv2D)           (None, 5, 26, 64)         18496     
+                                                                 
+ batch_normalization (BatchN  (None, 5, 26, 64)        256       
+ ormalization)                                                   
+                                                                 
+ dropout (Dropout)           (None, 5, 26, 64)         0         
+                                                                 
+ reshape (Reshape)           (None, 5, 1664)           0         
+                                                                 
+ bidirectional (Bidirectiona  (None, 5, 64)            434432    
+ l)                                                              
+                                                                 
+ dropout_1 (Dropout)         (None, 5, 64)             0         
+                                                                 
+ dense (Dense)               (None, 5, 100)            6500      
+                                                                 
+ dropout_2 (Dropout)         (None, 5, 100)            0         
+                                                                 
+ flatten (Flatten)           (None, 500)               0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 501       
+                                                                 
+=================================================================
+Total params: 460,505
+Trainable params: 460,377
+Non-trainable params: 128
+_________________________________________________________________
+
+Epoch 1/200
+train loss: 9574352.0
+train mean_absolute_error: 1826.8533935546875
+train lateness: 0.7678800225257874
+train earliness: 0.033630628138780594
+validation loss: 1015050.1875
+validation mean_absolute_error: 746.2573852539062
+validation lateness: 0.2895266115665436
+validation earliness: 0.2028297781944275
+Time taken for epoch: 259.00s
+
+Epoch 2/200
+train loss: 1234767.5
+train mean_absolute_error: 822.8132934570312
+train lateness: 0.25369182229042053
+train earliness: 0.28817200660705566
+validation loss: 986958.25
+validation mean_absolute_error: 776.6209716796875
+validation lateness: 0.19863925874233246
+validation earliness: 0.347786009311676
+Time taken for epoch: 268.61s
+The validation tracker metric at 746.2573852539062 hasn't increased  in 1 epochs
+
+Epoch 3/200
+train loss: 1154866.625
+train mean_absolute_error: 792.4630126953125
+train lateness: 0.23958149552345276
+train earliness: 0.2843531370162964
+validation loss: 1276214.0
+validation mean_absolute_error: 793.68212890625
+validation lateness: 0.41514480113983154
+validation earliness: 0.07031647115945816
+Time taken for epoch: 303.03s
+The validation tracker metric at 746.2573852539062 hasn't increased  in 2 epochs
+
+Epoch 4/200
+train loss: 1012617.1875
+train mean_absolute_error: 717.5604248046875
+train lateness: 0.21697306632995605
+train earliness: 0.2582249641418457
+validation loss: 823475.0
+validation mean_absolute_error: 652.989990234375
+validation lateness: 0.22548946738243103
+validation earliness: 0.21051551401615143
+Time taken for epoch: 278.68s
+
+Epoch 5/200
+train loss: 1087019.375
+train mean_absolute_error: 705.211669921875
+train lateness: 0.20710501074790955
+train earliness: 0.2624084949493408
+validation loss: 837176.5625
+validation mean_absolute_error: 666.095703125
+validation lateness: 0.1659219115972519
+validation earliness: 0.30313438177108765
+Time taken for epoch: 273.12s
+The validation tracker metric at 652.989990234375 hasn't increased  in 1 epochs
+
+Epoch 6/200
+train loss: 1080195.375
+train mean_absolute_error: 697.7302856445312
+train lateness: 0.20250901579856873
+train earliness: 0.2639982998371124
+validation loss: 907907.25
+validation mean_absolute_error: 643.169677734375
+validation lateness: 0.28357961773872375
+validation earliness: 0.11931659281253815
+Time taken for epoch: 277.38s
+
+Epoch 7/200
+train loss: 1070459.25
+train mean_absolute_error: 680.4253540039062
+train lateness: 0.2008126676082611
+train earliness: 0.24967356026172638
+validation loss: 801182.5625
+validation mean_absolute_error: 634.7103271484375
+validation lateness: 0.193585604429245
+validation earliness: 0.2325688749551773
+Time taken for epoch: 276.06s
+
+Epoch 8/200
+train loss: 1058040.875
+train mean_absolute_error: 671.7571411132812
+train lateness: 0.19833914935588837
+train earliness: 0.24642565846443176
+validation loss: 800456.875
+validation mean_absolute_error: 643.3966674804688
+validation lateness: 0.18146483600139618
+validation earliness: 0.26082611083984375
+Time taken for epoch: 276.19s
+The validation tracker metric at 634.7103271484375 hasn't increased  in 1 epochs
+
+Epoch 9/200
+train loss: 1049329.25
+train mean_absolute_error: 669.6204223632812
+train lateness: 0.19796492159366608
+train earliness: 0.245775505900383
+validation loss: 821982.6875
+validation mean_absolute_error: 631.2100830078125
+validation lateness: 0.21371710300445557
+validation earliness: 0.2034897357225418
+Time taken for epoch: 275.89s
+
+Epoch 10/200
+2022-08-30 09:25:35.169177: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131007 of 145940
+2022-08-30 09:26:05.488637: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131008 of 145940
+2022-08-30 09:26:59.106591: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131009 of 145940
+2022-08-30 09:27:24.957766: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131010 of 145940
+2022-08-30 09:27:41.510878: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131011 of 145940
+2022-08-30 09:28:14.768311: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131012 of 145940
+2022-08-30 09:28:49.465954: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131013 of 145940
+2022-08-30 09:29:22.050324: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131014 of 145940
+2022-08-30 09:29:50.518968: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131015 of 145940
+2022-08-30 09:30:10.380168: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131016 of 145940
+2022-08-30 09:30:27.921201: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131017 of 145940
+2022-08-30 09:30:41.588540: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131018 of 145940
+2022-08-30 09:30:43.008798: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131019 of 145940
+2022-08-30 09:30:43.173429: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131020 of 145940
+2022-08-30 09:30:43.173505: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131021 of 145940
+2022-08-30 09:30:43.173528: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131022 of 145940
+2022-08-30 09:30:43.173541: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131023 of 145940
+2022-08-30 09:30:43.173572: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131024 of 145940
+2022-08-30 09:30:45.523669: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131025 of 145940
+2022-08-30 09:30:57.517519: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131026 of 145940
+2022-08-30 09:31:15.356850: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131027 of 145940
+2022-08-30 09:31:30.167002: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131028 of 145940
+2022-08-30 09:31:41.308439: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131029 of 145940
+2022-08-30 09:31:54.784527: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131030 of 145940
+2022-08-30 09:32:10.539213: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131031 of 145940
+2022-08-30 09:32:17.093698: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131032 of 145940
+2022-08-30 09:32:30.075889: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131033 of 145940
+2022-08-30 09:33:02.746899: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131034 of 145940
+2022-08-30 09:33:05.813291: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131035 of 145940
+2022-08-30 09:33:05.849189: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131036 of 145940
+2022-08-30 09:33:05.849240: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131037 of 145940
+2022-08-30 09:33:05.849266: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131038 of 145940
+2022-08-30 09:33:05.849283: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131039 of 145940
+2022-08-30 09:33:05.849320: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131040 of 145940
+2022-08-30 09:33:06.073850: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131041 of 145940
+2022-08-30 09:33:06.329794: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131042 of 145940
+2022-08-30 09:33:06.329845: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131043 of 145940
+2022-08-30 09:33:06.329857: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131044 of 145940
+2022-08-30 09:33:06.329871: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131045 of 145940
+2022-08-30 09:33:06.329912: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131046 of 145940
+2022-08-30 09:33:06.329934: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131047 of 145940
+2022-08-30 09:33:06.329944: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131048 of 145940
+2022-08-30 09:33:06.329964: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131049 of 145940
+2022-08-30 09:33:06.329978: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131050 of 145940
+2022-08-30 09:33:06.329996: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131051 of 145940
+2022-08-30 09:33:06.330010: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131052 of 145940
+2022-08-30 09:33:06.330023: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:380] Filling up shuffle buffer (this may take a while): 131053 of 145940
+2022-08-30 09:33:06.363180: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:405] Shuffle buffer filled.

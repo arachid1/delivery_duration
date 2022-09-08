@@ -1,0 +1,7 @@
+1_hr_count_by_market_id,1_hr_avg_subtotal_by_market_id,long_score_by_market_id,short_score_by_market_id,trip_to_customer_by_market_id
+0,0.0,0.0,0.67,1650
+1,1200.0,0.0,0.67,1650
+0,0.0,0.5,0.5,2700
+1,1000.0,0.5,0.5,2700
+0,0.0,0.5,0.5,2700
+1,500.0,0.5,0.5,2700

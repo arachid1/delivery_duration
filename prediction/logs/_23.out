@@ -1,0 +1,35 @@
+2022-08-15 19:49:42.743677: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-15 19:49:42.743732: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-15 19:49:45.300200: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-15 19:49:45.300243: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-15 19:49:45.300264: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 4730
+Description: removing features
+File dir is ../../doordash/prediction/cache/train_23
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_23/1
+Augmenting...
+Reading prev_orders_market_id...
+Time passed: 0.142425537109375 secs
+Reading prev_orders_store_id...
+Time passed: 0.13013386726379395 secs
+6 features have been added: ['created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_market_id', 'prev_orders_store_id']
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Fitting...
+Validating...
+(143743, 13)
+['market_id', 'store_id', 'subtotal', 'total_onshift_dashers', 'total_busy_dashers', 'total_outstanding_orders', 'estimated_store_to_consumer_driving_duration', 'created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_market_id', 'prev_orders_store_id']
+[0.04200387 0.1091066  0.10909099 0.08168614 0.0604859  0.0840611
+ 0.13377265 0.03533629 0.10182213 0.00773264 0.09188798 0.12517317
+ 0.01784055]
+Val results
+mean absolute error 663.858135
+Kfold metrics
+Kfold average mae: 663.858135 
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_23/2

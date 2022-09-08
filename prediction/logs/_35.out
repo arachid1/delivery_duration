@@ -1,0 +1,59 @@
+2022-08-16 23:26:25.057306: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-16 23:26:25.057367: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-16 23:26:27.633777: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-16 23:26:27.633830: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-16 23:26:27.633849: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 10230
+Description: sig
+File dir is ../../doordash/prediction/cache/train_35
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_35/1
+2022-08-16 23:26:27.644178: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Augmenting...
+Reading prev_orders_count_by_market_id...
+Time passed: 0.042140960693359375 secs
+Reading prev_orders_avg_by_market_id...
+Time passed: 0.04823160171508789 secs
+Reading prev_orders_count_by_store_id...
+Time passed: 0.03730273246765137 secs
+Reading prev_orders_avg_by_store_id...
+Time passed: 0.028354406356811523 secs
+8 features have been added: ['created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_count_by_market_id', 'prev_orders_avg_by_market_id', 'prev_orders_count_by_store_id', 'prev_orders_avg_by_store_id']
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 1, 1024)           16384     
+                                                                 
+ dropout (Dropout)           (None, 1, 1024)           0         
+                                                                 
+ dense_1 (Dense)             (None, 1, 512)            524800    
+                                                                 
+ dropout_1 (Dropout)         (None, 1, 512)            0         
+                                                                 
+ dense_2 (Dense)             (None, 1, 256)            131328    
+                                                                 
+ dropout_2 (Dropout)         (None, 1, 256)            0         
+                                                                 
+ dense_3 (Dense)             (None, 1, 128)            32896     
+                                                                 
+ dropout_3 (Dropout)         (None, 1, 128)            0         
+                                                                 
+ flatten (Flatten)           (None, 128)               0         
+                                                                 
+ dense_4 (Dense)             (None, 1)                 129       
+                                                                 
+=================================================================
+Total params: 705,537
+Trainable params: 705,537
+Non-trainable params: 0
+_________________________________________________________________
+
+Epoch 1/200

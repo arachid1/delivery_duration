@@ -1,0 +1,36 @@
+2022-08-15 23:12:21.769475: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-15 23:12:21.769535: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-15 23:12:24.348192: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-15 23:12:24.348233: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-15 23:12:24.348261: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 1215
+Description: all features
+File dir is ../../doordash/prediction/cache/train_25
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_25/1
+Augmenting...
+Reading prev_orders_count_by_market_id...
+Time passed: 0.04258394241333008 secs
+Reading prev_orders_avg_by_market_id...
+Time passed: 0.05511021614074707 secs
+Reading prev_orders_count_by_store_id...
+Time passed: 0.0392758846282959 secs
+Reading prev_orders_avg_by_store_id...
+Time passed: 0.02864551544189453 secs
+8 features have been added: ['created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_count_by_market_id', 'prev_orders_avg_by_market_id', 'prev_orders_count_by_store_id', 'prev_orders_avg_by_store_id']
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Traceback (most recent call last):
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/alirachidi/anaconda3/envs/classification/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/alirachidi/doordash/prediction/jobs/train_25.py", line 160, in <module>
+    train_model()
+  File "/home/alirachidi/doordash/prediction/jobs/train_25.py", line 97, in train_model
+    min_samples_leaf=parameters.min_samples_leaf,
+AttributeError: module 'modules.main.parameters' has no attribute 'min_samples_leaf'

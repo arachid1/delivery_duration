@@ -1,0 +1,224 @@
+2022-08-15 03:09:32.005158: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-15 03:09:32.005231: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-15 03:09:35.111789: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-15 03:09:35.111828: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-15 03:09:35.111850: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 17070
+Description: rerun mulitple parameters
+File dir is ../../doordash/prediction/cache/train_9
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_9/1
+2022-08-15 03:09:35.120708: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Reading prev_orders_market_id...
+Time passed: 0.18911194801330566 secs
+Reading prev_orders_store_id...
+Time passed: 0.18304848670959473 secs
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 1, 128)            1792      
+                                                                 
+ dropout (Dropout)           (None, 1, 128)            0         
+                                                                 
+ dense_1 (Dense)             (None, 1, 256)            33024     
+                                                                 
+ dropout_1 (Dropout)         (None, 1, 256)            0         
+                                                                 
+ flatten (Flatten)           (None, 256)               0         
+                                                                 
+ dense_2 (Dense)             (None, 1)                 257       
+                                                                 
+=================================================================
+Total params: 35,073
+Trainable params: 35,073
+Non-trainable params: 0
+_________________________________________________________________
+
+Epoch 1/15
+
+Training mean_absolute_error: 1064.6441650390625
+Validation loss: 814.13720703125
+Validation mean_absolute_error: 814.13720703125
+Time taken for epoch: 35.57s
+
+Epoch 2/15
+
+Training mean_absolute_error: 870.8763427734375
+Validation loss: 814.2002563476562
+Validation mean_absolute_error: 814.2002563476562
+Time taken for epoch: 34.94s
+The validation tracker metric at 814.13720703125 hasn't increased  in 1 epochs
+
+Epoch 3/15
+
+Training mean_absolute_error: 864.7171020507812
+Validation loss: 814.7523193359375
+Validation mean_absolute_error: 814.7523193359375
+Time taken for epoch: 35.09s
+The validation tracker metric at 814.13720703125 hasn't increased  in 2 epochs
+
+Epoch 4/15
+
+Training mean_absolute_error: 861.5294189453125
+Validation loss: 814.0498046875
+Validation mean_absolute_error: 814.0498046875
+Time taken for epoch: 34.27s
+
+Epoch 5/15
+
+Training mean_absolute_error: 858.6639404296875
+Validation loss: 813.9346923828125
+Validation mean_absolute_error: 813.9346923828125
+Time taken for epoch: 35.65s
+
+Epoch 6/15
+
+Training mean_absolute_error: 858.7499389648438
+Validation loss: 814.2880249023438
+Validation mean_absolute_error: 814.2880249023438
+Time taken for epoch: 33.50s
+The validation tracker metric at 813.9346923828125 hasn't increased  in 1 epochs
+
+Epoch 7/15
+
+Training mean_absolute_error: 857.2205810546875
+Validation loss: 813.9862670898438
+Validation mean_absolute_error: 813.9862670898438
+Time taken for epoch: 29.64s
+The validation tracker metric at 813.9346923828125 hasn't increased  in 2 epochs
+
+Epoch 8/15
+
+Training mean_absolute_error: 855.771728515625
+Validation loss: 815.640380859375
+Validation mean_absolute_error: 815.640380859375
+Time taken for epoch: 26.28s
+The validation tracker metric at 813.9346923828125 hasn't increased  in 3 epochs
+Lr has been adjusted to 0.0004000000189989805
+
+Epoch 9/15
+
+Training mean_absolute_error: 857.5189819335938
+Validation loss: 814.093017578125
+Validation mean_absolute_error: 814.093017578125
+Time taken for epoch: 25.92s
+The validation tracker metric at 813.9346923828125 hasn't increased  in 4 epochs
+
+Epoch 10/15
+
+Training mean_absolute_error: 856.249267578125
+Validation loss: 814.0370483398438
+Validation mean_absolute_error: 814.0370483398438
+Time taken for epoch: 25.57s
+Training stopped due to unimproved results over 5 epochs
+--- Best performance found at epoch 4 --
+Best value of tracked metric: 813.9346923828125
+Best mean_absolute_error: 813.9346923828125
+Kfold metrics
+Kfold average mae: 813.934692 
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_9/2
+Reading prev_orders_market_id...
+Time passed: 0.1399989128112793 secs
+Reading prev_orders_store_id...
+Time passed: 0.14052724838256836 secs
+--- training dataset contains 143743 elements ---
+--- validation dataset contains 35936 elements ---
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_3 (Dense)             (None, 1, 128)            1792      
+                                                                 
+ dropout_2 (Dropout)         (None, 1, 128)            0         
+                                                                 
+ dense_4 (Dense)             (None, 1, 256)            33024     
+                                                                 
+ dropout_3 (Dropout)         (None, 1, 256)            0         
+                                                                 
+ flatten_1 (Flatten)         (None, 256)               0         
+                                                                 
+ dense_5 (Dense)             (None, 1)                 257       
+                                                                 
+=================================================================
+Total params: 35,073
+Trainable params: 35,073
+Non-trainable params: 0
+_________________________________________________________________
+
+Epoch 1/15
+
+Training mean_absolute_error: 100869.53125
+Validation loss: 826.3087768554688
+Validation mean_absolute_error: 826.3087768554688
+Time taken for epoch: 48.90s
+
+Epoch 2/15
+
+Training mean_absolute_error: 973.7510986328125
+Validation loss: 822.0111083984375
+Validation mean_absolute_error: 822.0111083984375
+Time taken for epoch: 47.73s
+
+Epoch 3/15
+
+Training mean_absolute_error: 964.304443359375
+Validation loss: 814.4970703125
+Validation mean_absolute_error: 814.4970703125
+Time taken for epoch: 47.28s
+
+Epoch 4/15
+
+Training mean_absolute_error: 964.3480834960938
+Validation loss: 820.3150634765625
+Validation mean_absolute_error: 820.3150634765625
+Time taken for epoch: 47.67s
+The validation tracker metric at 814.4970703125 hasn't increased  in 1 epochs
+
+Epoch 5/15
+
+Training mean_absolute_error: 963.5274047851562
+Validation loss: 818.3428344726562
+Validation mean_absolute_error: 818.3428344726562
+Time taken for epoch: 47.44s
+The validation tracker metric at 814.4970703125 hasn't increased  in 2 epochs
+
+Epoch 6/15
+
+Training mean_absolute_error: 962.4452514648438
+Validation loss: 819.0653686523438
+Validation mean_absolute_error: 819.0653686523438
+Time taken for epoch: 46.04s
+The validation tracker metric at 814.4970703125 hasn't increased  in 3 epochs
+Lr has been adjusted to 0.0004000000189989805
+
+Epoch 7/15
+
+Training mean_absolute_error: 960.8843383789062
+Validation loss: 816.3419799804688
+Validation mean_absolute_error: 816.3419799804688
+Time taken for epoch: 45.89s
+The validation tracker metric at 814.4970703125 hasn't increased  in 4 epochs
+
+Epoch 8/15
+
+Training mean_absolute_error: 958.9664916992188
+Validation loss: 817.6043701171875
+Validation mean_absolute_error: 817.6043701171875
+Time taken for epoch: 46.72s
+Training stopped due to unimproved results over 5 epochs
+--- Best performance found at epoch 2 --
+Best value of tracked metric: 814.4970703125
+Best mean_absolute_error: 814.4970703125
+Kfold metrics
+Kfold average mae: 814.497070 
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_9/3

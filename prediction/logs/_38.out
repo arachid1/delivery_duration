@@ -1,0 +1,215 @@
+2022-08-17 01:36:09.235374: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-17 01:36:09.235438: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+-- Collecting Variables... --
+Tensorflow Version: 2.7.0
+2022-08-17 01:36:12.630326: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-08-17 01:36:12.630367: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-17 01:36:12.630383: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (instance-1): /proc/driver/nvidia/version does not exist
+Num GPUs Available:  0
+PID: 16077
+Description: cnn
+File dir is ../../doordash/prediction/cache/train_38
+--- All variables have been collected. --
+-------------------------------
+New job directory is ../../doordash/prediction/cache/train_38/1
+Augmenting...
+Reading prev_orders_count_by_market_id...
+Time passed: 0.05729961395263672 secs
+Reading prev_orders_avg_by_market_id...
+Time passed: 0.07297062873840332 secs
+Reading prev_orders_count_by_store_id...
+Time passed: 0.05012392997741699 secs
+Reading prev_orders_avg_by_store_id...
+Time passed: 0.03997039794921875 secs
+8 features have been added: ['created_at_week_day', 'created_at_hour', 'created_at_month', 'created_at_day_of_month', 'prev_orders_count_by_market_id', 'prev_orders_avg_by_market_id', 'prev_orders_count_by_store_id', 'prev_orders_avg_by_store_id']
+/home/alirachidi/anaconda3/envs/classification/lib/python3.7/site-packages/pandas/util/_decorators.py:311: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  return func(*args, **kwargs)
+2022-08-17 01:42:29.284416: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+--- training dataset contains 143646 elements ---
+--- validation dataset contains 35909 elements ---
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 3, 15, 1024)       2048      
+                                                                 
+ dropout (Dropout)           (None, 3, 15, 1024)       0         
+                                                                 
+ dense_1 (Dense)             (None, 3, 15, 512)        524800    
+                                                                 
+ dropout_1 (Dropout)         (None, 3, 15, 512)        0         
+                                                                 
+ dense_2 (Dense)             (None, 3, 15, 256)        131328    
+                                                                 
+ dropout_2 (Dropout)         (None, 3, 15, 256)        0         
+                                                                 
+ flatten (Flatten)           (None, 11520)             0         
+                                                                 
+ dense_3 (Dense)             (None, 1)                 11521     
+                                                                 
+=================================================================
+Total params: 669,697
+Trainable params: 669,697
+Non-trainable params: 0
+_________________________________________________________________
+
+Epoch 1/200
+
+Training mean_absolute_error: 884.2481689453125
+Validation loss: 1300.7403564453125
+Validation mean_absolute_error: 712.1329956054688
+Time taken for epoch: 225.57s
+
+Epoch 2/200
+
+Training mean_absolute_error: 777.268310546875
+Validation loss: 1732.9979248046875
+Validation mean_absolute_error: 690.0764770507812
+Time taken for epoch: 229.44s
+
+Epoch 3/200
+
+Training mean_absolute_error: 753.35791015625
+Validation loss: 2089.43359375
+Validation mean_absolute_error: 667.3082275390625
+Time taken for epoch: 219.24s
+
+Epoch 4/200
+
+Training mean_absolute_error: 741.4276123046875
+Validation loss: 2442.229736328125
+Validation mean_absolute_error: 676.4218139648438
+Time taken for epoch: 219.19s
+The validation tracker metric at 667.3082275390625 hasn't increased  in 1 epochs
+
+Epoch 5/200
+
+Training mean_absolute_error: 727.2352294921875
+Validation loss: 4002.474365234375
+Validation mean_absolute_error: 654.0547485351562
+Time taken for epoch: 202.13s
+
+Epoch 6/200
+
+Training mean_absolute_error: 709.5377197265625
+Validation loss: 5009.45654296875
+Validation mean_absolute_error: 661.8367309570312
+Time taken for epoch: 217.48s
+The validation tracker metric at 654.0547485351562 hasn't increased  in 1 epochs
+
+Epoch 7/200
+
+Training mean_absolute_error: 703.3577270507812
+Validation loss: 5003.203125
+Validation mean_absolute_error: 670.333984375
+Time taken for epoch: 282.39s
+The validation tracker metric at 654.0547485351562 hasn't increased  in 2 epochs
+
+Epoch 8/200
+
+Training mean_absolute_error: 698.7887573242188
+Validation loss: 5305.947265625
+Validation mean_absolute_error: 641.3251342773438
+Time taken for epoch: 224.64s
+
+Epoch 9/200
+
+Training mean_absolute_error: 695.2232055664062
+Validation loss: 5455.58154296875
+Validation mean_absolute_error: 655.7969360351562
+Time taken for epoch: 223.79s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 1 epochs
+
+Epoch 10/200
+
+Training mean_absolute_error: 697.1577758789062
+Validation loss: 5666.96337890625
+Validation mean_absolute_error: 645.0606079101562
+Time taken for epoch: 282.39s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 2 epochs
+
+Epoch 11/200
+
+Training mean_absolute_error: 696.1629028320312
+Validation loss: 5027.640625
+Validation mean_absolute_error: 657.5215454101562
+Time taken for epoch: 275.45s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 3 epochs
+
+Epoch 12/200
+
+Training mean_absolute_error: 698.5073852539062
+Validation loss: 4749.8564453125
+Validation mean_absolute_error: 675.363525390625
+Time taken for epoch: 231.19s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 4 epochs
+
+Epoch 13/200
+
+Training mean_absolute_error: 693.6094360351562
+Validation loss: 5192.71337890625
+Validation mean_absolute_error: 643.2679443359375
+Time taken for epoch: 224.83s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 5 epochs
+
+Epoch 14/200
+
+Training mean_absolute_error: 694.0953979492188
+Validation loss: 4755.99755859375
+Validation mean_absolute_error: 646.7694702148438
+Time taken for epoch: 226.95s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 6 epochs
+Lr has been adjusted to 0.000750000006519258
+
+Epoch 15/200
+
+Training mean_absolute_error: 692.525634765625
+Validation loss: 4750.01708984375
+Validation mean_absolute_error: 642.3282470703125
+Time taken for epoch: 225.29s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 7 epochs
+
+Epoch 16/200
+
+Training mean_absolute_error: 693.4359741210938
+Validation loss: 4476.9189453125
+Validation mean_absolute_error: 647.8046875
+Time taken for epoch: 225.58s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 8 epochs
+
+Epoch 17/200
+
+Training mean_absolute_error: 693.1927490234375
+Validation loss: 4408.80078125
+Validation mean_absolute_error: 650.3154907226562
+Time taken for epoch: 227.57s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 9 epochs
+
+Epoch 18/200
+
+Training mean_absolute_error: 692.525390625
+Validation loss: 4415.31005859375
+Validation mean_absolute_error: 643.0816650390625
+Time taken for epoch: 230.22s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 10 epochs
+
+Epoch 19/200
+
+Training mean_absolute_error: 693.097900390625
+Validation loss: 4118.7705078125
+Validation mean_absolute_error: 651.684326171875
+Time taken for epoch: 273.96s
+The validation tracker metric at 641.3251342773438 hasn't increased  in 11 epochs
+
+Epoch 20/200
+
+Training mean_absolute_error: 688.93994140625
+Validation loss: 4328.87060546875
+Validation mean_absolute_error: 638.5648803710938
+Time taken for epoch: 237.59s
+
+Epoch 21/200
