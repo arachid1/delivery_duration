@@ -1,10 +1,12 @@
 ### - Set up -
 
 Versions
+
 Python: 3.7
 Tensorflow: 3.7
-Keras:
+Keras: 2.7
 Tensorboard: 2.9.1
+
 
 To-do's:
 - change cache and data root paths in modules/main/parameters.py
@@ -57,7 +59,7 @@ It works in great tandem with the parameters utility.
 
 the testing script will run every script in the testing/unittests folders and output the results to the log file, test_results.txt.
 I primarly test my feature engineering, stacking and search space manipulations tools. my process is to write custom orders with correct set of generated features in a dataframe, that I use as an input to my test functions, by for example regenerating features and comparing them against truth value.
-TODO: fix test 1_2 and 1_3, still working custom test cases, but require update after code change
+TODO: fix test 1_2 and 1_3, still working custom test cases, but require update after code change.
 
 *bash pass_test.sh*
 
