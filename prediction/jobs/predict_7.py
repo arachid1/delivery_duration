@@ -1,5 +1,3 @@
-from collections import defaultdict
-from re import A
 from modules.main import parameters as p
 from modules.main.training import *
 from modules.main.processing import *
@@ -41,38 +39,6 @@ def train_model(model_to_be_trained=None):
     test_data = add_features(test_data, label="test_", search_spaces={
                              'historical': copy})
 
-    # print(test_data[test_data['store_id'] == 39])
-    # test_data.sort_values(by=['market_id', 'created_at'], ascending=[True, True], inplace=True)
-    # # write_short_sample(test_data.head(), "test_file.txt")
-    # for v in [1, 2, 3, 4, 5, 6]:
-    #     for f in ['short_score_by_market_id']:
-    #         print("new")
-    #         print(v)
-    #         temp = historical_data[historical_data['market_id'] == v]
-    #         temp.sort_values(by=['market_id', 'created_at'], ascending=[True, True], inplace=True)
-    #         d = test_data[test_data['market_id'] == v]
-    #         d.sort_values(by=['market_id', 'created_at'], ascending=[True, True], inplace=True)
-    #         d = d.reset_index()
-    #         # print(temp.tail(1)[f])
-    #         # print("test")
-    #         # print(d.head(1)[f])
-    #         # print(d.tail(1)[f])
-    #         # print("mok")
-    #         # print(d['market_id'].value_counts())
-    #         print(d.head())
-    #         # print(d[0]['created_at'])
-    #         temp.to_csv("quick_check.csv")
-    #         print(d.iloc[0]['created_at'])
-    #         print(d.iloc[2000]['created_at'])
-    #         print(d.iloc[5000]['created_at'])
-    #         print(d.iloc[7500]['created_at'])
-    #         print(d[f][:5000].value_counts())
-    #         # print(d[0]['created_at'])
-    #         print(d[f][5000:10000].value_counts())
-    #         print(d[f][10000:15000].value_counts())
-    #         print(d.tail())
-    #         exit()
-
     # stack_samples returns a np.array of np.arrays for each unique domain e.g. market id or store id
     X_hist, y_hist = stack_samples(historical_data, p.stacking_target)
     X_test, _ = stack_samples(test_data, p.stacking_target)
@@ -101,15 +67,8 @@ def train_model(model_to_be_trained=None):
 
     with open(os.path.join(p.job_dir, 'results.txt'), 'a') as f:
         for i, X in enumerate(X_test):
-            # X = np.swapaxes(X, 0, 1)
             pred = best_model.predict([X])
             f.write('%d, %.2f\n' % (ids[i], pred))
-            # print(ids[i])
-            # print(X)
-            # print(test_data[test_data['delivery_id'] == ids[i]])
-            # if i == 3:
-            #     exit()
-
 
 if __name__ == "__main__":
 

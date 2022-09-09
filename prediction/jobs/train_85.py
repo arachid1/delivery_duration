@@ -24,11 +24,6 @@ np.set_printoptions(threshold=sys.maxsize)
 np.set_printoptions(suppress=True)
 pd.set_option('display.max_columns', 500)
 
-# TODO: clean
-# TODO: comment
-# TODO: remove import
-# TODO: test function
-
 
 def train_model(model_to_be_trained=None):
 
