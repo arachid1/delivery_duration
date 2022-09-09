@@ -71,4 +71,5 @@ TODO: fix test 1_2 and 1_3, still working custom test cases, but require update 
 I conducted a thorough data analysis in the data_analysis notebook under jobs.<br/>
 It contains all types of plots revealing exciting insights.<br/>
 One can also find a summary of validation and test results at the bottom of the notebook along
-with h5 model locations, my drift analysis and more.
+with h5 model locations, my drift analysis and more. <br/>
+my best single test job results should be found in prediction/cache/final_predict_7/0/results.txt
