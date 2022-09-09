@@ -19,9 +19,9 @@ offers options to execute a file in the jobs folder, launch debugging mode, writ
 - debugging mode executes job with less data, lower number of epochs, etc, to ensure every step runs.
 
 *bash run.sh $MODE $FILE_NUMBER #DEBUGGING $WRITING_LOGS #DESCRIPTION*<br/>
-example: bash run.sh predict 6 1 0 "2.3.23"
+example: bash run.sh predict 6 1 0 "2.3.23"<br/>
 -> run predict_6 in debugging model without nohup<br/>
-example: bash run.sh train 80 0 1 "_varing_lr"
+example: bash run.sh train 80 0 1 "_varing_lr"<br/>
 -> run train_80 with nohup with description "_varing_lr'
 
 ### - Other Scripts -
