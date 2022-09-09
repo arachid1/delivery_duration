@@ -59,6 +59,7 @@ It works in great tandem with the parameters utility.
 
 the testing script will run every script in the testing/unittests folders and output the results to the log file, test_results.txt.
 I primarly test my feature engineering, stacking and search space manipulations tools. my process is to write custom orders with correct set of generated features in a dataframe, that I use as an input to my test functions, by for example regenerating features and comparing them against truth value.
+Tests are named X_Y, with X a digit indicative of the example/datafrane used, while Y refers to the different tests applied to that example.
 TODO: fix test 1_2 and 1_3, still working custom test cases, but require update after code change.
 
 *bash pass_test.sh*
