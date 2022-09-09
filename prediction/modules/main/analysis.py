@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-
+from sklearn import linear_model
+from sklearn.metrics import mean_absolute_error
 
 def plot_outliers(df, columns):
     '''
@@ -96,3 +97,25 @@ def _strided_app(a, L, S):  # Window len = L, Stride len/stepsize = S
     n = a.strides[0]
     return np.lib.stride_tricks.as_strided(
         a, shape=(nrows, L), strides=(S*n, n))
+
+
+def run_linear_regression(df, y_hist, dropped_features):
+    '''
+    function to execute a linear regression analysis on dataframe, with the option to drop columns
+    :param df: dataframe (pandas.DataFrame)
+    :param y_hist: dataset labels (pandas.DataFrame)
+    :param dropped_features: columns to drop (list of strings)
+    '''
+    temp = df
+    temp = temp.drop(columns=dropped_features)
+    X_hist = temp.to_numpy()
+    X_hist = X_hist
+    regr = linear_model.LinearRegression()
+    regr = regr.fit(X_hist, y_hist)
+    y_pred = regr.predict(X_hist)
+    mae = mean_absolute_error(y_hist, y_pred)
+    print("mae: {}".format(mae))
+    print("coefficients")
+    o_is = regr.coef_.argsort()
+    for ordered_i in o_is:
+        print("{} : {}".format(temp.columns[ordered_i],regr.coef_[ordered_i]))

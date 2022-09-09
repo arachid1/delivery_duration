@@ -51,9 +51,7 @@ def init(arguments, file_name):
     initial_channels = 1
 
     global stack_length
-    # global data_length
     stack_length = 1
-    # data_length = 7
 
     global n_epochs
     global batch_size
@@ -68,7 +66,6 @@ def init(arguments, file_name):
     es_patience = 6
     lr = 1e-3
     lr_patience = 3
-    # min_update = 0.0
     factor = 0.5
     min_lr = 1e-5
 
@@ -152,7 +149,7 @@ def init(arguments, file_name):
                            '24_hr_avg_time_by_market_id',
                            '24_hr_avg_time_by_store_id']
 
-    # layout for tensorboard
+    # tensorboard layout
     global layout
     layout = {
         "Metrics": {
